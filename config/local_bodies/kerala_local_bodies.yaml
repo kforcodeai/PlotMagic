@@ -1,0 +1,62 @@
+state: kerala
+local_bodies:
+  - canonical_name: thiruvananthapuram_corporation
+    aliases: ["thiruvananthapuram", "trivandrum", "thiruvananthapuram corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: kochi_corporation
+    aliases: ["kochi", "cochin", "kochi corporation", "cochin corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: thrissur_corporation
+    aliases: ["thrissur", "trichur", "thrissur corporation", "trichur corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: kozhikode_corporation
+    aliases: ["kozhikode", "calicut", "kozhikode corporation", "calicut corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: kollam_corporation
+    aliases: ["kollam", "quilon", "kollam corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: kannur_corporation
+    aliases: ["kannur", "cannanore", "kannur corporation"]
+    jurisdiction_type: municipality
+    local_body_type: corporation
+  - canonical_name: palakkad_municipality
+    aliases: ["palakkad", "palghat", "palakkad municipality"]
+    jurisdiction_type: municipality
+    local_body_type: municipality
+  - canonical_name: kottayam_municipality
+    aliases: ["kottayam", "kottayam municipality"]
+    jurisdiction_type: municipality
+    local_body_type: municipality
+  - canonical_name: pathanamthitta_municipality
+    aliases: ["pathanamthitta", "pathanamthitta municipality"]
+    jurisdiction_type: municipality
+    local_body_type: municipality
+  - canonical_name: malappuram_municipality
+    aliases: ["malappuram", "malappuram municipality"]
+    jurisdiction_type: municipality
+    local_body_type: municipality
+  - canonical_name: aluva_municipality
+    aliases: ["aluva", "aluwaye", "aluva municipality"]
+    jurisdiction_type: municipality
+    local_body_type: municipality
+  - canonical_name: anthikkad_panchayat
+    aliases: ["anthikkad", "anthikad", "anthikkad panchayat"]
+    jurisdiction_type: panchayat
+    local_body_type: village_panchayat
+    panchayat_category: Category-II
+  - canonical_name: adimali_panchayat
+    aliases: ["adimali", "adimaly", "adimali panchayat"]
+    jurisdiction_type: panchayat
+    local_body_type: village_panchayat
+    panchayat_category: Category-I
+  - canonical_name: kumbalanghi_panchayat
+    aliases: ["kumbalanghi", "kumbalangi", "kumbalanghi panchayat"]
+    jurisdiction_type: panchayat
+    local_body_type: village_panchayat
+    panchayat_category: Category-II
+

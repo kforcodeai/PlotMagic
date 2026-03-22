@@ -1,0 +1,19 @@
+thresholds:
+  jurisdiction_accuracy_min: 0.99
+  occupancy_accuracy_min: 0.97
+  clause_recall_at_20_min: 0.95
+  citation_precision_min: 0.99
+  numeric_correctness_min: 0.99
+  unsupported_claim_rate_max: 0.01
+  semantic_accuracy_proxy_min: 0.60
+  mandatory_component_completeness_min: 0.85
+  contradiction_rate_max: 0.02
+  citation_groundedness_min: 0.99
+  abstention_correctness_min: 0.95
+  contract_violation_rate_max: 0.00
+
+slo:
+  informational_p95_ms: 2500
+  compliance_check_p95_ms: 3500
+  comparison_p95_ms: 4500
+  calculation_p95_ms: 3000

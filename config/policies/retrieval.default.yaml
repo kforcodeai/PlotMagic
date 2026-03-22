@@ -1,0 +1,17 @@
+vector_rrf_weight: 1.0
+lexical_rrf_weight: 1.0
+structured_rrf_weight: 0.35
+cross_ref_score_decay: 0.85
+rrf_k: 60
+default_evidence_docs_per_topic: 5
+topic_min_docs: 2
+max_excerpt_sentences: 14
+max_excerpt_chars: 2400
+min_evidence_score: 0.05
+min_query_relevance: 0.03
+query_relevance_weight: 0.20
+topic_match_weight: 0.05
+max_topic_likes: 6
+per_topic_structured_limit_floor: 8
+candidate_pool_factor: 4.0
+max_claims_per_doc: 4

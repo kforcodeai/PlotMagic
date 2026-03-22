@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "dataset": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/evaluation/kmbr/kmbr_multihop_retrieval_dataset.jsonl",
+    "query_count": 46,
+    "top_k": 20,
+    "retrieval_mode": "hybrid_no_reranker",
+    "rerank_provider": "no_reranker",
+    "rerank_model": null,
+    "doc_hit_at_k": 0.978261,
+    "doc_recall_at_k": 0.850026,
+    "chunk_recall_at_k": 0.881677,
+    "mrr": 0.523773,
+    "zero_recall_queries": 1,
+    "restored_from_memory": true,
+    "restored_on": "2026-03-22",
+    "restored_note": "Reconstructed from remembered validated metrics after accidental deletion."
+  },
+  "per_query": []
+}

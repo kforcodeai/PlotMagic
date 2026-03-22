@@ -1,0 +1,2 @@
+"""PlotMagic legal RAG package."""
+

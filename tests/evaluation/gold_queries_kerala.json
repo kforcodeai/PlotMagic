@@ -1,0 +1,47 @@
+[
+  {
+    "id": "kerala_scope_001",
+    "category": "scope_resolution",
+    "query": "Can I build a 4 storey commercial building in Thrissur?",
+    "expected_state": "kerala",
+    "expected_jurisdiction_type": "municipality",
+    "expected_occupancy": ["F"]
+  },
+  {
+    "id": "kerala_occ_001",
+    "category": "occupancy_mapping",
+    "query": "What are the parking requirements for a hostel in Anthikkad panchayat?",
+    "expected_state": "kerala",
+    "expected_jurisdiction_type": "panchayat",
+    "expected_occupancy": ["A2"]
+  },
+  {
+    "id": "kerala_numeric_001",
+    "category": "numeric_table",
+    "query": "What is the maximum FAR for Group A1 in KPBR Category I panchayat?",
+    "request_jurisdiction_type": "panchayat",
+    "request_panchayat_category": "Category-I",
+    "expected_jurisdiction_type": "panchayat",
+    "expected_topics": ["far", "coverage"],
+    "must_cite_rule": "35"
+  },
+  {
+    "id": "kerala_mixed_001",
+    "category": "mixed_use",
+    "query": "A building has shops and apartments. Which occupancy restrictions apply for access width?",
+    "request_jurisdiction_type": "municipality",
+    "expected_jurisdiction_type": "municipality",
+    "expected_topics": ["parking", "setback"],
+    "expected_behavior": "most_restrictive"
+  },
+  {
+    "id": "kerala_crossref_001",
+    "category": "cross_reference",
+    "query": "For exit width in KMBR, what rules and tables are referenced?",
+    "request_jurisdiction_type": "municipality",
+    "expected_jurisdiction_type": "municipality",
+    "expected_topics": ["fire_safety"],
+    "must_include_reference_type": "table"
+  }
+]
+

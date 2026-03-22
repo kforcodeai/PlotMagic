@@ -1,0 +1,12 @@
+procedural_occupancy_agnostic: true
+generic_fallback_enabled: true
+allow_generic_without_occupancy: true
+strict_topic_matching: false
+broad_procedural_topics:
+  - permit
+  - timeline
+  - fees
+  - registration
+  - appeal
+  - penalty
+  - definition

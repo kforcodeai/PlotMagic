@@ -1,0 +1,64 @@
+ingestion_qc:
+  max_failed_file_ratio: 0.10
+  min_clause_per_rule: 1.00
+  min_table_header_coverage: 0.10
+  min_sub_rule_ratio: 0.01
+  max_clause_noise_ratio: 0.20
+
+states:
+  kerala:
+    jurisdictions:
+      municipality:
+        ruleset_id: KMBR_1999
+        ruleset_version: "1999"
+        display_name: Kerala Municipality Building Rules, 1999
+        source_format: html
+        parser_class: KMBRHTMLParser
+        source_path: data/kerala/kmbr_muncipal_rules
+      panchayat:
+        ruleset_id: KPBR_2011
+        ruleset_version: "2011"
+        display_name: Kerala Panchayat Building Rules, 2011
+        source_format: markdown
+        parser_class: KPBRMarkdownParser
+        source_path: data/kerala/kpbr_panchayat_rule.md
+        sub_categories:
+          - Category-I
+          - Category-II
+    occupancy_groups:
+      A1:
+        name: Residential
+        keywords: ["residential", "dwelling", "apartment", "flat", "house", "villa"]
+      A2:
+        name: Lodging Houses
+        keywords: ["hotel", "hostel", "tourist home", "lodging", "rooming house", "dormitory"]
+      B:
+        name: Educational
+        keywords: ["school", "college", "institution", "education", "campus"]
+      C:
+        name: Medical or Hospital
+        keywords: ["hospital", "clinic", "medical", "nursing home", "sanatorium"]
+      D:
+        name: Assembly
+        keywords: ["auditorium", "theatre", "wedding hall", "community hall", "assembly", "church", "temple"]
+      E:
+        name: Office or Business
+        keywords: ["office", "it park", "business", "administrative", "court house"]
+      F:
+        name: Mercantile or Commercial
+        keywords: ["shop", "market", "mall", "commercial", "mercantile", "showroom", "retail"]
+      G1:
+        name: Industrial
+        keywords: ["industrial", "factory", "manufacturing", "plant", "refinery"]
+      G2:
+        name: Small Industrial
+        keywords: ["small industrial", "workshop", "carpentry", "small scale"]
+      H:
+        name: Storage
+        keywords: ["warehouse", "godown", "storage", "depot", "silo"]
+      I(1):
+        name: Hazardous I1
+        keywords: ["service garage", "poultry", "welding", "hazardous i1"]
+      I(2):
+        name: Hazardous I2
+        keywords: ["explosive", "chemical", "toxic", "hazardous i2", "petrol storage"]

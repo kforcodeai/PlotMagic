@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+pyyaml
+beautifulsoup4
+lxml
+openai
+cohere
+psycopg[binary]
+pypdf
+streamlit
+qdrant-client

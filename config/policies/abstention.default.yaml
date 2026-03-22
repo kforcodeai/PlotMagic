@@ -1,0 +1,4 @@
+min_support_ratio: 0.25
+min_evidence_score: 0.05
+conservative_mandatory_components: false
+contradiction_blocking: false

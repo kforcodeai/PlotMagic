@@ -1,0 +1,6 @@
+max_output_tokens: 1400
+max_claims_per_section: 7
+summary_char_limit: 480
+concise_claim_char_limit: 520
+excavation_claim_char_limit: 560
+enforce_non_empty_summary: true

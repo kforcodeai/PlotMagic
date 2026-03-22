@@ -1,0 +1,63 @@
+defaults:
+  embedding_provider: openai_embedding
+  reranker_provider: cohere_reranker
+  llm_provider: openai_responses_llm
+
+providers:
+  embedding:
+    hash_embedding:
+      dim: 256
+      timeout_s: 2
+      max_retries: 0
+      retry_backoff_s: 0.1
+    openai_embedding:
+      model: text-embedding-3-large
+      api_key_env: OPENAI_API_KEY
+      timeout_s: 30
+      max_retries: 2
+      retry_backoff_s: 0.5
+
+  reranker:
+    no_reranker:
+      top_n: 80
+      timeout_s: 1
+      max_retries: 0
+      retry_backoff_s: 0.1
+    identity_reranker:
+      top_n: 80
+      timeout_s: 1
+      max_retries: 0
+      retry_backoff_s: 0.1
+    cohere_reranker:
+      model: rerank-v3.5
+      api_key_env: COHERE_API_KEY
+      top_n: 80
+      timeout_s: 30
+      max_retries: 2
+      retry_backoff_s: 0.5
+    openai_llm_reranker:
+      model: gpt-4.1-mini
+      api_key_env: OPENAI_API_KEY
+      top_n: 24
+      timeout_s: 45
+      max_retries: 1
+      retry_backoff_s: 0.5
+      candidate_limit: 30
+
+  llm:
+    no_llm:
+      model: deterministic
+      timeout_s: 1
+      max_retries: 0
+      retry_backoff_s: 0.1
+    openai_responses_llm:
+      model: gpt-4.1-mini
+      api_key_env: OPENAI_API_KEY
+      timeout_s: 30
+      max_retries: 2
+      retry_backoff_s: 0.5
+
+feature_flags:
+  rerank_enabled: true
+  rerank_top_n: 80
+  llm_enabled: true

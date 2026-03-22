@@ -1,0 +1,22 @@
+state_code: kerala
+parser_registry:
+  municipality: KMBRHTMLParser
+  panchayat: KPBRMarkdownParser
+scope_resolver_config: config/local_bodies/kerala_local_bodies.yaml
+occupancy_mapping_config: config/states.yaml
+policy_profiles:
+  retrieval: config/policies/retrieval.default.yaml
+  applicability: config/policies/applicability.default.yaml
+  generation: config/policies/generation.default.yaml
+  abstention: config/policies/abstention.default.yaml
+precedence_policy:
+  - effective_version
+  - specific_over_generic
+  - most_restrictive_for_mixed_use
+  - proviso_over_parent_clause
+normalizer_rules:
+  Group AI: Group A1
+  Group GI: Group G1
+  Group 1(1): Group I(1)
+  Group 1(2): Group I(2)
+tests_path: tests/statepacks/kerala

@@ -1,0 +1,71 @@
+{
+  "generated_at_utc": "2026-03-08T13:26:21.962783+00:00",
+  "state": "kerala",
+  "gold_file": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/tests/evaluation/gold_queries_kerala.json",
+  "query_count": 5,
+  "current": {
+    "metrics": {
+      "jurisdiction_accuracy": 1.0,
+      "occupancy_accuracy": 1.0,
+      "clause_recall_at_20": 0.0,
+      "citation_precision": 1.0,
+      "numeric_correctness": 1.0,
+      "unsupported_claim_rate": 0.0,
+      "semantic_accuracy_proxy": 0.0,
+      "mandatory_component_completeness": 1.0,
+      "contradiction_rate": 0.0,
+      "citation_groundedness": 1.0,
+      "abstention_correctness": 1.0,
+      "contract_violation_rate": 0.0
+    },
+    "gate_passed": false,
+    "failures": [
+      "clause_recall_at_20 below threshold",
+      "semantic_accuracy_proxy below threshold"
+    ],
+    "high_risk": {
+      "topic_recall_proxy": 0.0,
+      "citation_groundedness": 1.0,
+      "abstention_correctness": 1.0
+    },
+    "query_count": 5
+  },
+  "baseline": {
+    "artifact": null,
+    "deltas": {},
+    "regressions": []
+  },
+  "shadow": {
+    "legacy_metrics": {
+      "jurisdiction_accuracy": 1.0,
+      "occupancy_accuracy": 1.0,
+      "clause_recall_at_20": 0.0,
+      "citation_precision": 1.0,
+      "numeric_correctness": 1.0,
+      "unsupported_claim_rate": 0.0,
+      "semantic_accuracy_proxy": 0.0,
+      "mandatory_component_completeness": 1.0,
+      "contradiction_rate": 0.0,
+      "citation_groundedness": 1.0,
+      "abstention_correctness": 1.0,
+      "contract_violation_rate": 0.0
+    },
+    "delta_vs_legacy": {
+      "abstention_correctness": 0.0,
+      "citation_groundedness": 0.0,
+      "citation_precision": 0.0,
+      "clause_recall_at_20": 0.0,
+      "contract_violation_rate": 0.0,
+      "contradiction_rate": 0.0,
+      "jurisdiction_accuracy": 0.0,
+      "mandatory_component_completeness": 0.0,
+      "numeric_correctness": 0.0,
+      "occupancy_accuracy": 0.0,
+      "semantic_accuracy_proxy": 0.0,
+      "unsupported_claim_rate": 0.0
+    },
+    "regressions_vs_legacy": [],
+    "shadow_passed": true
+  },
+  "final_gate_passed": false
+}
