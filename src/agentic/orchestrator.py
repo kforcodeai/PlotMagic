@@ -40,7 +40,7 @@ class AgenticQueryOrchestrator:
     _AGENTIC_DYNAMIC_MODE = "agentic_dynamic"
     _AGENTIC_MAX_ITERATIONS = 4
     _AGENTIC_MIN_TOP_K = 6
-    _AGENTIC_MAX_TOP_K = 40
+    _AGENTIC_MAX_TOP_K = 50
 
     def __init__(
         self,
@@ -265,6 +265,7 @@ class AgenticQueryOrchestrator:
         event_sink: Callable[[dict[str, Any]], None] | None,
     ) -> tuple[RetrievalPass, EvidenceJudgeResult, list[AgentTraceStep]]:
         trace: list[AgentTraceStep] = []
+        top_k = self._initial_dynamic_top_k(top_k=top_k, plan=plan)
         pass1 = self._run_retrieval_pass(
             query=query,
             fact=fact,
@@ -517,12 +518,10 @@ class AgenticQueryOrchestrator:
         )
 
     def _initial_dynamic_top_k(self, *, top_k: int, plan: QueryPlan) -> int:
-        boost = 0
-        if len(plan.topics) > 1:
-            boost += 2
-        if plan.query_type in {"comparison", "procedural"}:
-            boost += 2
-        return self._clamp_top_k(top_k + boost)
+        # Use the planner's suggested_top_k as the base, but never go below
+        # the caller's explicit top_k (which may come from the API request).
+        base = max(top_k, getattr(plan, "suggested_top_k", top_k))
+        return self._clamp_top_k(base)
 
     def _clamp_top_k(self, value: int | float) -> int:
         bounded = int(round(float(value)))
@@ -673,7 +672,10 @@ class AgenticQueryOrchestrator:
             topics=focus_topics,
             judge=judge,
         )
-        next_top_k = current_top_k if stop else self._clamp_top_k(current_top_k + 4)
+        # Scale k growth by how many topics/components are still missing.
+        missing_count = len(judge.missing_topics) + len(judge.missing_mandatory_components)
+        k_boost = max(4, missing_count * 3)
+        next_top_k = current_top_k if stop else self._clamp_top_k(current_top_k + k_boost)
         return AgenticControlDecision(
             stop=stop,
             enough_context=bool(judge.sufficient),

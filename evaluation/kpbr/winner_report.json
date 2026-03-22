@@ -1,0 +1,94 @@
+{
+  "run_id": "20260322T093757Z",
+  "selected_mode": "no_winner",
+  "gate_results": {
+    "hybrid_no_reranker": {
+      "passed_all": false,
+      "gate_results": {
+        "hard::citation_groundedness_mean": true,
+        "hard::contract_violation_rate": true,
+        "hard::vector_hits_zero_count": true,
+        "improvement::token_set_f1_mean": false,
+        "improvement::token_set_recall_mean": false,
+        "improvement::numeric_token_recall_mean": false,
+        "improvement::mandatory_component_completeness_mean": false,
+        "per_query::coverage": false
+      },
+      "failures": [
+        "improvement gate failed: baseline summary missing for token_set_f1_mean",
+        "improvement gate failed: baseline summary missing for token_set_recall_mean",
+        "improvement gate failed: baseline summary missing for numeric_token_recall_mean",
+        "improvement gate failed: baseline summary missing for mandatory_component_completeness_mean",
+        "per-query gates failed for 6 query checks"
+      ],
+      "per_query_failures": [
+        {
+          "question": "In a Security Zone, what extra approvals are required for a religious building proposal and when can permit be issued?",
+          "reason": "mandatory_component_completeness < 0.50",
+          "value": 0.3333333333333333
+        },
+        {
+          "question": "After completion submission, what are the statutory timelines for development and occupancy certificates, and what deemed-issuance/tolerance clauses apply?",
+          "reason": "numeric-heavy query numeric_token_recall < 0.50",
+          "value": 0.3333333333333333
+        },
+        {
+          "question": "For a flood-prone CRZ plot with nearby overhead electric lines, what base restrictions and line-clearance values must be checked?",
+          "reason": "numeric-heavy query numeric_token_recall < 0.50",
+          "value": 0.0
+        },
+        {
+          "question": "What are minimum front/rear/side/interior open-space rules up to 10m height, and how do they scale above 10m?",
+          "reason": "numeric-heavy query numeric_token_recall < 0.50",
+          "value": 0.4
+        },
+        {
+          "question": "For non-A1 occupancies, what Category-II parking relaxation exists, what two-wheeler add-on is mandatory, and when are loading/unloading bays required?",
+          "reason": "numeric-heavy query numeric_token_recall < 0.50",
+          "value": 0.16666666666666666
+        },
+        {
+          "question": "For educational/medical/office occupancies under Rule 56, what different plot-usage approval thresholds apply and what minimum open yards are required?",
+          "reason": "numeric-heavy query numeric_token_recall < 0.50",
+          "value": 0.23076923076923078
+        }
+      ],
+      "weighted_score": 0.6414077278495748
+    }
+  },
+  "per_query_failures": {
+    "hybrid_no_reranker": [
+      {
+        "question": "In a Security Zone, what extra approvals are required for a religious building proposal and when can permit be issued?",
+        "reason": "mandatory_component_completeness < 0.50",
+        "value": 0.3333333333333333
+      },
+      {
+        "question": "After completion submission, what are the statutory timelines for development and occupancy certificates, and what deemed-issuance/tolerance clauses apply?",
+        "reason": "numeric-heavy query numeric_token_recall < 0.50",
+        "value": 0.3333333333333333
+      },
+      {
+        "question": "For a flood-prone CRZ plot with nearby overhead electric lines, what base restrictions and line-clearance values must be checked?",
+        "reason": "numeric-heavy query numeric_token_recall < 0.50",
+        "value": 0.0
+      },
+      {
+        "question": "What are minimum front/rear/side/interior open-space rules up to 10m height, and how do they scale above 10m?",
+        "reason": "numeric-heavy query numeric_token_recall < 0.50",
+        "value": 0.4
+      },
+      {
+        "question": "For non-A1 occupancies, what Category-II parking relaxation exists, what two-wheeler add-on is mandatory, and when are loading/unloading bays required?",
+        "reason": "numeric-heavy query numeric_token_recall < 0.50",
+        "value": 0.16666666666666666
+      },
+      {
+        "question": "For educational/medical/office occupancies under Rule 56, what different plot-usage approval thresholds apply and what minimum open yards are required?",
+        "reason": "numeric-heavy query numeric_token_recall < 0.50",
+        "value": 0.23076923076923078
+      }
+    ]
+  },
+  "comparison_artifact": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/evaluation/kpbr/qna_panchayat_mode_comparison_20260322T093757Z.json"
+}

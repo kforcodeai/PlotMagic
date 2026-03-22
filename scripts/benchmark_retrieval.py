@@ -265,12 +265,13 @@ def run_retrieval(
     if not engine.state.hybrid_retriever:
         engine.state.hybrid_retriever = engine._build_hybrid_retriever()
 
+    effective_top_k = max(request.top_k, getattr(plan, "suggested_top_k", request.top_k))
     retrieval = engine.state.hybrid_retriever.retrieve(
         query=request.query,
         fact=fact,
         plan=plan,
         candidate_docs=candidates,
-        top_k=request.top_k,
+        top_k=effective_top_k,
         retrieval_mode=request.retrieval_mode,
     )
     reranker_used = bool(retrieval.latency_ms.get("reranker_used", 0.0))

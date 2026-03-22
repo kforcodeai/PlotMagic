@@ -150,6 +150,7 @@ class QueryPlan:
     sub_queries: list[PlannedSubQuery] = field(default_factory=list)
     mentioned_rule_numbers: list[str] = field(default_factory=list)
     mandatory_components: list[str] = field(default_factory=list)
+    suggested_top_k: int = 12
 
 
 class QueryPlanner:
@@ -212,12 +213,16 @@ class QueryPlanner:
         mandatory_components = self._mandatory_components(query, topics)
 
         sub_queries = [PlannedSubQuery(topic=topic, text=f"{topic.replace('_', ' ')} requirements {query}") for topic in topics]
+        suggested_top_k = self._compute_suggested_top_k(
+            topics=topics, rules=rules, query_type=query_type,
+        )
         return QueryPlan(
             query_type=query_type,
             topics=topics,
             sub_queries=sub_queries,
             mentioned_rule_numbers=rules,
             mandatory_components=mandatory_components,
+            suggested_top_k=suggested_top_k,
         )
 
     def _extract_topics(self, query_l: str) -> list[str]:
@@ -248,6 +253,24 @@ class QueryPlanner:
                 if item not in topics:
                     topics.append(item)
         return topics
+
+    @staticmethod
+    def _compute_suggested_top_k(
+        *, topics: list[str], rules: list[str], query_type: str,
+    ) -> int:
+        n_topics = len(topics)
+        n_rules = len(rules)
+        if n_topics <= 1 and n_rules == 0:
+            base = 10
+        elif n_topics <= 3 and n_rules <= 2:
+            base = 15
+        else:
+            base = 25
+        if query_type == "comparison":
+            base = max(base, 20)
+        if n_rules >= 3:
+            base = max(base, 25)
+        return min(base, 50)
 
     def _classify(self, query_l: str) -> str:
         if self._is_procedural_query(query_l):

@@ -1,0 +1,381 @@
+{
+  "summary": {
+    "schema_version": "legal_benchmark.v3",
+    "run_id": "20260322T093757Z",
+    "phase": "cold",
+    "retrieval_mode": "hybrid_no_reranker",
+    "generated_at_utc": "2026-03-22T09:41:40.237007+00:00",
+    "dataset": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/evaluation/kpbr/qna_panchayat.json",
+    "query_count": 20,
+    "top_k": 15,
+    "ingest_ms": 22235.81970797386,
+    "vector_backend": "QdrantLocalVectorStore",
+    "vector_db_path": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/.cache/qdrant_kpbr",
+    "point_count": 1203,
+    "reused_vs_rebuilt": "rebuilt",
+    "vector_total_clauses": 1203,
+    "vector_cached_count": 0,
+    "vector_embedded_count": 1203,
+    "vector_deleted_count": 0,
+    "upsert_count": 1203,
+    "embedding_calls_made": 1203,
+    "token_set_f1_mean": 0.37267318768756325,
+    "token_set_f1_min": 0.11764705882352941,
+    "token_set_recall_mean": 0.49539304253948246,
+    "numeric_token_recall_mean": 0.5626495726495726,
+    "retrieval_ceiling_token_set_f1_mean": 0.15329793415842194,
+    "retrieval_ceiling_token_set_recall_mean": 0.6496924397497866,
+    "retrieval_ceiling_numeric_token_recall_mean": 0.9085347985347986,
+    "synthesis_efficiency_f1_mean": 1.0,
+    "synthesis_efficiency_recall_mean": 0.742891159131831,
+    "synthesis_efficiency_numeric_recall_mean": 0.6275,
+    "retrieval_shortfall_recall_mean": 0.35030756025021337,
+    "generation_shortfall_recall_mean": 0.15928369862317698,
+    "semantic_accuracy_proxy_mean": 0.37267318768756325,
+    "mandatory_component_completeness_mean": 0.8666666666666667,
+    "contradiction_rate_mean": 0.01,
+    "citation_groundedness_mean": 1.0,
+    "abstention_correctness_mean": 1.0,
+    "predicted_length_chars_mean": 1646.5,
+    "citation_count_mean": 7.5,
+    "contract_violation_rate": 0.0,
+    "vector_hits_zero_count": 0,
+    "lexical_hits_zero_count": 0,
+    "bottleneck_counts": {
+      "retrieval": 0,
+      "synthesis": 11,
+      "mixed": 3,
+      "balanced": 6
+    }
+  },
+  "queries": [
+    {
+      "question": "A hotel proposal is within 100m of defence land and 30m of railway land. What consultation windows and deemed-objection rule apply before issuing a building permit?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 100,
+      "lexical_hits": 100,
+      "structured_hits": 37,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "7",
+        "12",
+        "133",
+        "5",
+        "26"
+      ]
+    },
+    {
+      "question": "For land development near defence and railway boundaries, what are the consultation distances and what happens if no final remarks are received in 30 days?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 100,
+      "lexical_hits": 100,
+      "structured_hits": 37,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "31",
+        "5",
+        "33",
+        "119",
+        "133"
+      ],
+      "pass2_vector_hits": 100,
+      "pass2_lexical_hits": 100,
+      "pass2_structured_hits": 17,
+      "pass2_fallback_stage": "strict"
+    },
+    {
+      "question": "In a Security Zone, what extra approvals are required for a religious building proposal and when can permit be issued?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 60,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "12",
+        "7",
+        "5",
+        "11",
+        "133"
+      ]
+    },
+    {
+      "question": "When are Category-II residential and small non-residential projects exempt from permit, and what prior intimation/objection timeline still applies?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 1,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "10",
+        "7",
+        "133",
+        "132",
+        "5"
+      ]
+    },
+    {
+      "question": "Under the special chapter for huts and similar small constructions, what replaces permit and what extra restriction applies near defence/railway/security zones?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 19,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "7",
+        "133",
+        "10",
+        "5",
+        "132"
+      ]
+    },
+    {
+      "question": "For a project with excavation deeper than 1.5m and risky cut geometry, what extra drawings, neighbour protections, concurrence stage, and compensation mechanism are mandated?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 58,
+      "structured_hits": 2,
+      "candidate_count": 164,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "12",
+        "22",
+        "116",
+        "APP-L",
+        "140"
+      ]
+    },
+    {
+      "question": "If the Secretary delays permit decision and then the Panchayat also delays, when does deemed approval apply and how is the work treated?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 40,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "12",
+        "5",
+        "11",
+        "137",
+        "16"
+      ]
+    },
+    {
+      "question": "What is the validity period of building/development permits, how many extensions are allowed, and what are extension/renewal fees?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 11,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "17",
+        "24",
+        "22",
+        "130",
+        "APP-N"
+      ]
+    },
+    {
+      "question": "A plot with active permit is transferred mid-project. What must transferor/transferee do and within what timeline must Secretary decide?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 19,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "12",
+        "22",
+        "24",
+        "17",
+        "11"
+      ]
+    },
+    {
+      "question": "After completion submission, what are the statutory timelines for development and occupancy certificates, and what deemed-issuance/tolerance clauses apply?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 46,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "25",
+        "22",
+        "88",
+        "130",
+        "31"
+      ]
+    },
+    {
+      "question": "For a flood-prone CRZ plot with nearby overhead electric lines, what base restrictions and line-clearance values must be checked?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 28,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "26",
+        "119",
+        "36",
+        "7",
+        "5"
+      ]
+    },
+    {
+      "question": "What are minimum front/rear/side/interior open-space rules up to 10m height, and how do they scale above 10m?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 45,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "27",
+        "80",
+        "82",
+        "77",
+        "64"
+      ]
+    },
+    {
+      "question": "What are street-centerline and street-boundary distance rules, and what special relaxation exists for short cul-de-sacs or very narrow streets?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 25,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "31",
+        "64",
+        "74",
+        "28",
+        "119"
+      ]
+    },
+    {
+      "question": "How is maximum building height computed from street width and setback, and what cap applies in Security Zones?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 45,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "36",
+        "7",
+        "5",
+        "80",
+        "77"
+      ]
+    },
+    {
+      "question": "For access-width compliance, what baseline table rule applies, how are mixed occupancies treated, and what override applies to high-rises?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 22,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "104",
+        "37",
+        "34",
+        "55",
+        "80"
+      ]
+    },
+    {
+      "question": "For Group A1 apartment parking, what rates apply by carpet-area band, how are fractions handled, and what visitor parking add-on is mandatory?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 21,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "38",
+        "53",
+        "104",
+        "58",
+        "35"
+      ]
+    },
+    {
+      "question": "For non-A1 occupancies, what Category-II parking relaxation exists, what two-wheeler add-on is mandatory, and when are loading/unloading bays required?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 21,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "38",
+        "58",
+        "56",
+        "104",
+        "55"
+      ]
+    },
+    {
+      "question": "How should FAR/coverage be computed for mixed-occupancy plots above vs up to 0.5 hectares, and what fixed FAR/coverage applies to government-approved IT parks/buildings?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 80,
+      "lexical_hits": 80,
+      "structured_hits": 19,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "35",
+        "79",
+        "58",
+        "56",
+        "61"
+      ]
+    },
+    {
+      "question": "For A1 apartments and A2 lodging houses, what DTP/CTP approval thresholds trigger, and when is Fire Force approval required?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 47,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "55",
+        "57",
+        "61",
+        "56",
+        "APP-A"
+      ],
+      "pass2_vector_hits": 60,
+      "pass2_lexical_hits": 60,
+      "pass2_structured_hits": 20,
+      "pass2_fallback_stage": "strict"
+    },
+    {
+      "question": "For educational/medical/office occupancies under Rule 56, what different plot-usage approval thresholds apply and what minimum open yards are required?",
+      "retrieval_mode": "hybrid_no_reranker",
+      "vector_hits": 60,
+      "lexical_hits": 60,
+      "structured_hits": 60,
+      "candidate_count": 170,
+      "fallback_stage": "strict",
+      "top_rules_cited": [
+        "56",
+        "58",
+        "61",
+        "59",
+        "57"
+      ]
+    }
+  ]
+}

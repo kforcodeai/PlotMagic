@@ -1,0 +1,13 @@
+{
+  "ingest_ms": 22235.81970797386,
+  "vector_backend": "QdrantLocalVectorStore",
+  "vector_db_path": "/Users/kforcode/Developer/Mis/Mine/PlotMagic/.cache/qdrant_kpbr",
+  "point_count": 1203,
+  "reused_vs_rebuilt": "rebuilt",
+  "vector_total_clauses": 1203,
+  "vector_cached_count": 0,
+  "vector_embedded_count": 1203,
+  "vector_deleted_count": 0,
+  "upsert_count": 1203,
+  "embedding_calls_made": 1203
+}

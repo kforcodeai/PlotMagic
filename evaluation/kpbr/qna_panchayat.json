@@ -1,0 +1,414 @@
+[
+  {
+    "question": "A hotel proposal is within 100m of defence land and 30m of railway land. What consultation windows and deemed-objection rule apply before issuing a building permit?",
+    "answer": "Before issuing the building permit, the Secretary must consult (in writing) (a) the Defence establishment officer-in-charge when the site is within 100 m, and (b) the Railway Authority when the site is within 30 m of railway track land. Each authority has 30 days from receipt of the consultation letter to respond; objections received within that 30-day window must be considered. If no objection/remarks are received within the stipulated time, the Secretary may presume there is no objection and proceed; however, if an interim reply is received, the Secretary may delay the final decision until final remarks are received.",
+    "id": "kpbr_mh_001",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:892-899",
+        "snippet": "(5) In the case of an application to construct or re-construct a building or make\nalteration or addition or extension to a building or make or enlarge any structure within a\ndistance of 100 metres from any property maintained by the Defence establishment, the\nSecretary shall consult in writing the officer in charge of the said establishment, before\npermission is granted. Such officer shall furnish his reply within 30 days from the date of\nreceipt of the consultation letter if such establishment has any objection to the proposed\nconstruction. The objections raised by the officer within the said 30 days shall be duly\nconsidered by the Secretary before issuing permit. If no objection is received within the"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:909-916",
+        "snippet": "(6) In the case of an application to erect or re-erect a building or make alteration or\naddition or extension to a building or to make or enlarge any structure within 30 metres\nfrom the boundary of railway track land maintained by Railways, the Secretary shall consult\nin writing the Railway Authority concerned before any permission is granted. Such\nauthority shall, furnish the reply within 30 days from the date of receipt of the consultation\nletter if the authority has any objection to the proposed construction. The objection, if any,\nraised by the Railway Authority, within the said 30 days shall be duly considered by the\nSecretary before issuing permit."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:943-947",
+        "snippet": "(9) In case where final remarks are not received within 30 days from the Defence\nofficer /Railway Authority as in sub rules (5) or (6) the Secretary may delay final decision\nin the application for permit, if any interim reply is received from the Defence/Railway\nauthority. If not the Secretary shall presume that there is no objection and proceed with the\nissue of permit as per rules."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:899-907",
+        "snippet": "considered by the Secretary before issuing permit. If no objection is received within the\n\nstipulated time, the Secretary shall presume that there is no objection and proceed with the\n\nissue of permit as per rules."
+      }
+    ]
+  },
+  {
+    "question": "For land development near defence and railway boundaries, what are the consultation distances and what happens if no final remarks are received in 30 days?",
+    "answer": "For land development/re-development, consultation is required if the site is within 100 m of Defence property or within 30 m of railway track land. The Defence Officer / Railway Authority has 30 days to reply. If final remarks are not received within 30 days, the Secretary may delay the decision if an interim reply has been received; otherwise, the Secretary presumes there is no objection and proceeds to issue the permit.",
+    "id": "kpbr_mh_002",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:695-701",
+        "snippet": "(5) In the case of an application for development or re-development of any land\nwithin a distance of 100 metres from any property maintained by Defence establishment, the\nSecretary shall consult in writing, the Officer - in - charge of such establishment before the\npermission is granted. Such Officer shall furnish his reply within thirty days from the date of\nreceipt of consultation letter if such establishment has any objection to the proposed\ndevelopment. The objection, if any, raised by the officer within the said thirty days shall be\nduly considered by the Secretary before issuing permit."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:703-709",
+        "snippet": "(6) In the case of an application for development or re- development of any land\nwithin 30 metres from the boundary of railway track land maintained by Railways, the\nSecretary shall consult in writing the Railway Authority concerned before the permission is\ngranted. Such officer shall furnish his reply within thirty days from the date of receipt of the\nconsultation letter if such establishment has any objection to the proposed development. The\nobjection, if any, raised by the Railway Authority within the said 30 days shall be duly\nconsidered by the Secretary before issuing permit."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:739-743",
+        "snippet": "(9) In case where the final remarks are not received within 30 days time from the\nDefence Officer or Railway Authorities as in sub rule (5) or (6), the Secretary may delay\nfinal decision, if any interim reply is received from the Defence/Railway Authority\nconcerned. If not the Secretary shall presume that there is no objection and proceed with the\nissue of permit as per rules."
+      }
+    ]
+  },
+  {
+    "question": "In a Security Zone, what extra approvals are required for a religious building proposal and when can permit be issued?",
+    "answer": "In a notified Security Zone, the Secretary must consult the District Collector before granting permission; the Collector replies after obtaining specific recommendations from the Director General of Police, and any objections/restrictions must be complied with. For a building for religious purpose/worship, prior approval/clearance/permission and concurrence (as applicable) of the District Collector must be obtained and the Manual of Guidelines to Prevent and Control Communal Disturbances/Promote Communal Harmony must be complied with; the permit can be issued only after the Collector\u2019s concurrence is received.",
+    "id": "kpbr_mh_003",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:925-930",
+        "snippet": "(8) In the case of an application to construct or reconstruct a building or make\nalteration or addition or extension within any Security Zone, the Secretary shall consult\nthe District Collector concerned before permission is granted. The District Collector, after\ngetting the specific recommendations from the Director General of Police, shall furnish his\nreply. The objection if any raised and/or restriction and/or regulation if any suggested by\nthe District Collector shall be complied by the Secretary while issuing the permit:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:932-941",
+        "snippet": "Provided, in the case of construction of new building or reconstruction or alteration\nor addition or extension of existing building for religious purpose or worship, prior approval\nor clearance or permission and concurrence as the case may be, of the District Collector\nconcerned shall be obtained and the conditions stipulated in the \u2018Manual of Guidelines to\nPrevent and Control Communal Disturbances and to Promote Communal Harmony\u2019 which is\nin force have to be complied with. Applications for renovation without involving additional\nbuilt-up area or structural alterations of existing buildings for religious purpose or places of\nworship can be considered by the secretary after informing the District Collector in form in\nAppendix - N duly filled by the applicant and verified by the Secretary. The permit shall be\nissued only after the receipt of the concurrence of the District Collector."
+      }
+    ]
+  },
+  {
+    "question": "When are Category-II residential and small non-residential projects exempt from permit, and what prior intimation/objection timeline still applies?",
+    "answer": "No building permit is required for: (a) Category-II Village Panchayats, Group A1 residential buildings with total built-up area (existing + proposed) up to 300 sq.m on all floors and max two storeys, and all single-family residential buildings; and (b) Category-II Group A2 and F occupancies (and specified small units like poultry/livestock farms, traditional coir/handloom/cashew/lime kiln/carpentry/smithy units) with total built-up area (existing + proposed) up to 150 sq.m on all floors and max two storeys (excluding religious/worship uses). Even when exempt, the owner must intimate the Secretary at least 10 days before starting; if the Secretary has objections, they must be communicated within 10 days.",
+    "id": "kpbr_mh_004",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1209-1213",
+        "snippet": "10. _Permit not necessary for certain works.-_ Notwithstanding anything contained in\nthese rules no building permit shall be necessary for executing the following works which do\nnot otherwise violate any provisions regarding applicable general building requirements,\nstructural stability and fire safety requirements of the rules, namely:-\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1250-1257",
+        "snippet": "(xiii) Buildings in Category \u2013II Village Panchayats under Group A1-Residential\noccupancy with total built-up area on all floors upto 300 sq.metres (including existing and\nproposed within the plot) and the number of storeys limited to two and all single family\nResidential Buildings\n\n(xiv) Buildings in Category \u2013II Village Panchayats under Group A2 and F\noccupancies, poultry farms, livestock farms, traditional coir works, handloom units, cashew\nprocessing units, lime kilns, carpentry and smithy units; all of which with total built-up area"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1263-1270",
+        "snippet": "on all floors upto 150 sq.metres (including existing and proposed within the plot) and the\nnumber of storeys limited to two, except those for religious purpose and /or worship.\n\nProvided that the details of works under items (i), (xii), (xiii) & (xiv) shall be\nintimated to the Secretary at least ten days before the commencement of such works, with\nparticulars regarding the existing conditions and proposals so as to enable to make an\nassessment of the nature of the work. If the Secretary has any objection it shall be\ncommunicated to the owner within ten days:"
+      }
+    ]
+  },
+  {
+    "question": "Under the special chapter for huts and similar small constructions, what replaces permit and what extra restriction applies near defence/railway/security zones?",
+    "answer": "For huts and the other small constructions covered by the special chapter, a permit is replaced by prior intimation: the owner must file the Appendix A2 proforma at least 10 days before commencement. If the site is within 100 m of Defence property and/or within 30 m of the railway boundary and/or within any Security Zone, work must NOT commence until the owner receives the Secretary\u2019s written intimation regarding objections (if any) from the concerned authorities/officers; the Secretary must obtain and communicate those objections immediately.",
+    "id": "kpbr_mh_005",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:5528-5535",
+        "snippet": "_132.Provisions for huts and certain other constructions .-_ Not withstanding anything\ncontained in these rules, provisions in this Chapter shall apply to the following constructions\nor reconstructions or additions or alterations and development or redevelopment of land\npertaining to;\n\n```\n(i) Huts; mentioned in Rule 10 item (xii)\n```"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:5547-5552",
+        "snippet": "_133. Permit not necessary.-_ (1) For buildings as stipulated in rule 132, permit as per\nthese rules is not necessary:\n\nProvided that the owner shall intimate details of works to the Secretary in the\nproforma prescribed in Appendix A2 at least ten days before the commencement of such\nworks."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:5584-5591",
+        "snippet": "Provided further that, if the site is within a distance of 100 metres from any\nproperty maintained by Defence establishment and/or within 30 metres from the railway\nboundary and/or within any Security Zone, no work shall be commenced at site, until letter\nof intimation of the Secretary with regard to objections if any furnished by the authority or\nofficer concerned as per sub rule (5), (6), (8) and (9) of rule 5 and sub rule (5), (6), (8) and\n(9) of rule 7 as the case may be, are received by the owner. In such cases, the Secretary\nshall carry out actions for obtaining objections if any from the respective officer/authority\nand the same shall be intimated to the owner in writing immediately."
+      }
+    ]
+  },
+  {
+    "question": "For a project with excavation deeper than 1.5m and risky cut geometry, what extra drawings, neighbour protections, concurrence stage, and compensation mechanism are mandated?",
+    "answer": "For excavations deeper than 1.5 m where the depth of cutting exceeds the horizontal distance to the plot boundary, the permit application must include sufficient copies of: (i) dimensioned plans and sectional drawings showing levels/depths of cutting, (ii) drawings/specs/details of temporary and permanent protective measures, (iii) drawings/specs/details of slabs/beams/columns/retaining walls etc. at and below ground floor level, and (iv) pile details (if any). The Secretary must supply copies of these details and the permit to adjoining land owners, and must act on written complaints about actual/possible damage. After earthworks/works up to ground level are completed, the applicant must request concurrence; no above-ground construction may proceed until concurrence (Appendix C1) is issued\u2014within 7 days if works are satisfactory and no complaints exist. If complaints are received, the Secretary must refer the matter within 5 days to a Panchayat-level Technical Expert Committee (Secretary as convener, an Assistant Engineer of LSGD engineering wing, and two experts in structural and geotechnical engineering). The Committee assesses damage, may require protective measures, and fixes compensation equal to the restoration cost plus 30% solatium; concurrence is issued only after measures are completed and compensation (and committee expenses) are paid. Committee process is to be completed within 3 weeks.",
+    "id": "kpbr_mh_006",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1308-1312",
+        "snippet": "_12. Approval of site and plans and issue of permit where excavations to a depth of\nmore than 1.5 metres is involved.-_ (1) In the case of constructions/land developments\nwhich involve any earthwork excavation to a depth of more than 1.5 metres, if the depth of\ncutting is more than the horizontal distance of such cutting from the plot boundary, the\nfollowing provisions shall apply:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1331-1342",
+        "snippet": "(i) dimensioned plan(s) and sectional drawing(s) showing the levels and\ndepths of cutting at all places in respect of excavations for building construction and land\ndevelopment works;\n\n(ii) drawings, specifications and details of temporary and permanent\nprotective measures proposed; and\n\n(iii) drawings, specifications and details of slabs, beams, columns,\nretaining walls etc. proposed at the ground floor level and below;\n\n(iv) details of piles if any, including their drawings, specifications, erection\nmethods and the like."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1358-1363",
+        "snippet": "(7) Once the earthworks and/or constructions upto the ground level are completed\nas per the approved plans, the applicant may in writing intimate the same to the Secretary\nand request for concurrence for carrying out rest of the works. No construction shall be\ncarried out above the ground level until the Secretary issues such concurrence as in\nAppendix C1.\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1374-1377",
+        "snippet": "(9) If any complaint is received as in sub rule (6), the Secretary shall,-\n```\n(i) refer the matter within 5 days to the Technical Expert Committee\nconstituted as per sub rule (13) and convene a meeting of the Committee,"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1392-1396",
+        "snippet": "(11) The Committee shall evaluate the damages and fix the compensation and/or\nsuggest further protective measures, if any, to be taken by the applicant to solve the issues\nraised by the petitioner(s). The amount of compensation shall include the actual cost of\nrestoration as decided by the Committee and an additional 30% as solatium.\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1402-1408",
+        "snippet": "(13) For the purpose of this rule, Government may, constitute Panchayat level\nTechnical Expert Committee(s) comprising of the Secretary (convener), an officer not\nbelow the rank of an Assistant Engineer of the Engineering wing of Local Self\nGovernment Department having jurisdiction over the area and two experts, one each in\nStructural Engineering and Geotechnical Engineering (to be nominated by the\nGovernment) to assess the damage, suggest protective measures and fix the compensation.\nThe process of the Committee shall be completed within 3 weeks."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1351-1356",
+        "snippet": "(5) The Secretary shall supply copies of the details specified in sub rule ( 3 ) above\nand the permit to the adjoining land owners.\n\n(6) Any written complaint received after the date of issue of the permit(s) from\nowners or occupants in the adjoining properties on the actual or possible damages to their\nlife and property shall be acted upon by the Secretary as per the provisions in this rule."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1364-1367",
+        "snippet": "(8) The Secretary shall, if convinced that the works are carried out satisfactorily as\nper the permit(s) and provisions of this rule and no written complaint is received as in sub\nrule (6), issue concurrence as in Appendix C1 for carrying out the remaining works above\nthe ground level as per approved plans within 7 days."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1397-1400",
+        "snippet": "(12) Concurrence shall be issued by the Secretary, after ensuring that the protective\nmeasures are carried out to the satisfaction of the Committee and the compensation is paid\nby the applicant as per the decision of the Committee. The actual expenses of the\nCommittee as intimated by the Secretary shall be paid by the applicant."
+      }
+    ]
+  },
+  {
+    "question": "If the Secretary delays permit decision and then the Panchayat also delays, when does deemed approval apply and how is the work treated?",
+    "answer": "If the Secretary fails to grant/refuse approval or permission within 30 days, the applicant can request the Village Panchayat to decide. If the Panchayat does not determine the matter within one month of receiving that written request, approval/permission is deemed granted, and the applicant may proceed (without contravening the Act/rules). Work done under this deemed approval is treated as duly permitted (not requiring regularisation), and the permit must be issued per rules if the work otherwise complies.",
+    "id": "kpbr_mh_007",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1468-1478",
+        "snippet": "_16.Reference to Village Panchayat where the Secretary delays to grant or refuse to\napprove permission.-_ (1) The Panchayat shall, if the Secretary makes delay in granting or\nrefusing approval for a building site, neither gives nor refuses permission to execute any\nwork within thirty days from the date of receipt of the application, on the written request of\nthe applicant, be bound to determine whether such approval or permission should be given\nor not.\n\n(2) Where the Village Panchayat does not, within one month from the date of receipt\nof such written request, determine whether such approval or permission should be given or\nnot, such approval or permission shall be deemed to have been given, and the applicant may\nproceed to execute work, but not so as to contravene any provision of the Act or these rules"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1485-1487",
+        "snippet": "Provided that such execution of work shall be considered as duly permitted and not\none for regularisation and the permit shall be issued as per rules even if the work has been\ncommenced or being carried on or completed if it otherwise complies with the provisions of"
+      }
+    ]
+  },
+  {
+    "question": "What is the validity period of building/development permits, how many extensions are allowed, and what are extension/renewal fees?",
+    "answer": "Development/building permits are valid for 3 years from issue. The Secretary may grant up to two extensions, each for 3 more years, if applied for within the permit\u2019s valid period; extension fee is 10% of the applicable permit fee in force at the time of extension. One renewal (for 3 years) may be granted if applied for within 1 year after expiry; renewal fee is 50% of the permit fee in force at the time of renewal. For pre-2011 permits with different validity, extension/renewal must be arranged so total validity does not exceed 9 years.",
+    "id": "kpbr_mh_008",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1490-1497",
+        "snippet": "_17. Extension and renewal of periods of permit.-_ (1) A development permit or building\npermit issued under these rules shall be valid for three years from the date of issue.\n\n(2) The Secretary shall, on application submitted within the valid period of the\npermit, grant extension twice for a further period of three years each.\n\n(3) The fee for extension of period of permits shall be ten percent of the development\npermit fee or building permit fee as the case may be, in force at the time of granting"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1500-1505",
+        "snippet": "(4) The Secretary shall, on application submitted within one year of the expiry of the\npermit, grant renewal, once, for a period of three years.\n\n(5) The fee for renewal of permits shall be fifty percent of the development permit\nfee or building permit fee as the case may be, in force at the time of renewal.\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1527-1530",
+        "snippet": "(10) In case the period of validity stipulated in a permit issued before the\ncommencement of Kerala Panchayat Building Rules, 2011 is different from that stipulated in\nsub rule (1), then the extension or renewal of the permit shall be granted in such a way that\nthe total valid period of the permit shall not exceed nine years."
+      }
+    ]
+  },
+  {
+    "question": "A plot with active permit is transferred mid-project. What must transferor/transferee do and within what timeline must Secretary decide?",
+    "answer": "Before completion and before development/occupancy certificate is obtained, the transferor must inform the Secretary of any transfer (whole/part) of property covered by a development/building permit, including transferee details and intent to transfer the permit. The transferee must obtain the Secretary\u2019s written permission before commencing/continuing work, via a request on stamped white paper with ownership and possession documents and a Rs.25 fee. The Secretary must issue the transfer permission within 15 days of receiving the request if satisfied the transfer won\u2019t adversely affect development/construction.",
+    "id": "kpbr_mh_009",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1854-1858",
+        "snippet": "_24. Transfer of plots to be intimated.-_ (1) Every person holding development permit or\nbuilding permit shall, unless the work is executed in full and development or occupancy\ncertificate obtained, inform the Secretary of every transfer of the whole or part of any\nproperty involved in the permit together with the name and address of the transferee and his\nintention to transfer the permit."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1864-1870",
+        "snippet": "(2) Every person in whose favour any property is transferred along with a\ndevelopment permit or building permit by the transferor shall before commencing or\ncontinuing the work obtain permit of the Secretary in writing.\n\n(3) The request for permission to commence or continue work shall be submitted\nin white paper affixed with necessary court fee stamp, together with document regarding the\nownership and possession certificate and fee of Rs.25."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1872-1875",
+        "snippet": "(4) The Secretary shall, if convinced that the transfer will not in any way badly\naffect the development or construction, issue permission in writing, transferring the permit\nand allowing the commencement or continuation of the work, within 15 days from the date\nof receipt of the request."
+      }
+    ]
+  },
+  {
+    "question": "After completion submission, what are the statutory timelines for development and occupancy certificates, and what deemed-issuance/tolerance clauses apply?",
+    "answer": "After submitting the completion certificate (Appendix E; and for buildings other than residential up to two dwelling units, also signed by the registered professional as Appendix F), the Secretary must issue: (a) the development certificate (Appendix G) within 15 days, and (b) the occupancy certificate (Appendix H) within 15 days, if satisfied of conformity. If either certificate is not issued within 15 days, it is deemed issued and the owner may proceed accordingly. For occupancy, a tolerance for shortfall in mandatory open spaces/yards may be allowed up to 5% of the minimum required or 20 cm, whichever is less.",
+    "id": "kpbr_mh_010",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1877-1885",
+        "snippet": "_25. Completion certificate, development certificate and occupancy certificate.-_ (1) Every\nowner shall, on completion of the development or redevelopment of land or construction or\nreconstruction or addition or alteration of building, as per the permit issued to him, submit a\ncompletion certificate certified and signed by him, to the Secretary in the form in Appendix\nE:\n\nProvided that in the case of buildings, other than residential buildings up to two\ndwelling units, the completion certificate shall be certified and signed by the owner and\nregistered Architect or Building Designer or Engineer or Town Planner or Supervisor also"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1888-1895",
+        "snippet": "(2) The Secretary shall, on receipt of the completion certificate and on being\nsatisfied that the development or redevelopment of land has been effected in conformity with\nthe requirements of these rules, issue a development certificate in the form in Appendix G,\nnot later than 15 days from the date of receipt of the completion certificate:\n\nProvided that if no such development certificate is received within the said fifteen\ndays, the owner may proceed as if such a development certificate has been duly issued to\nhim."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1897-1905",
+        "snippet": "(3) The Secretary shall, on receipt of the completion certificate and on being\nsatisfied that the construction or reconstruction or addition or alteration has been carried out\nin conformity with the requirements of these rules, issue occupancy certificate in the form in\nAppendix H: not later than fifteen days from the date of receipt of the completion certificate:\n\nProvided that, in case there is deficiency as per these rules in the minimum\nmandatory open spaces/yards after completion of the construction, the secretary may allow a\ntolerance upto 5% of the minimum mandatory open spaces/yards to be provided as per these\nrules or 20 centimetres whichever is less for the building constructed:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1907-1908",
+        "snippet": "Provided also that if no such occupancy certificate is issued within the said fifteen\ndays, the owner may proceed as if such occupancy certificate has been duly issued to him."
+      }
+    ]
+  },
+  {
+    "question": "For a flood-prone CRZ plot with nearby overhead electric lines, what base restrictions and line-clearance values must be checked?",
+    "answer": "For a flood-prone plot (or slope >45\u00b0, unsuitable percolation soil, floodable area in a scheme, sandy beds), development/construction is barred unless the owner proves to the Secretary that the building will not be dangerous/injurious to health, won\u2019t be subject to flooding/erosion, and won\u2019t cause undue public expenditure. If the land is in a Coastal Regulation Zone (CRZ), the project is additionally subject to the restrictions in the Government of India CRZ notification under the Environment (Protection) Act, 1986 (as amended). For nearby overhead electric supply lines, construction must maintain minimum clearances (per Table I / Indian Electricity Rules): Low/medium voltage\u20142.40 m vertical, 1.20 m horizontal; High voltage up to 33kV\u20143.70 m vertical, 1.85 m horizontal; Extra-high voltage >33kV\u20143.70 m + 0.30 m per additional 33kV (or part) vertical, and 1.85 m + 0.30 m per additional 33kV (or part) horizontal.",
+    "id": "kpbr_mh_011",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1938-1951",
+        "snippet": "(3) No land development or redevelopment shall be made or no building shall be\nconstructed in a plot liable to flood or on a slope forming an angle of more than 45 degrees\nwith the horizontal or on soil unsuitable for percolation or on area shown as floodable area in\nany town planning scheme or in sandy beds, unless it is proved by the owner to the\nsatisfaction of the Secretary that construction of such a building will not be dangerous or\ninjurious to health and the site will not be subjected to flooding or erosion, or cause undue\nexpenditure of public funds in the provision of roads, sewers, sanitation, water supply or\nother public services.\n\n(4) Any land development or redevelopment of land or construction in any area\nnotified by Government of India as Coastal Regulation Zone under the Environment\n(Protection) Act, 1986 (29 of 1986) and Rules made thereunder shall be subject to the\nrestrictions that may be imposed by Government of India contained in the said notification\nas amended from time to time."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1953-1956",
+        "snippet": "(5) No building or part of a building shall be constructed or re-constructed and no\nadditions or alterations to any existing building shall be made in the intervening spaces\nbetween the building and any overhead electric supply line unless as described in Table I\nbelow and specified in the Indian Electricity Rules as amended from time to time"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1982-1990",
+        "snippet": "1 Low and medium voltage\nlines\n\n### 2.40 1.20\n\n2 High voltage lines up to\nand including 33000 volts\n\n### 3.70 1.85"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:1996-2003",
+        "snippet": "3.70 plus 0.30m for every\nadditional 33000 volts or\npart thereof\n```\n```\n1.85 plus 0.30m for\nevery additional\n33000 volts or part"
+      }
+    ]
+  },
+  {
+    "question": "What are minimum front/rear/side/interior open-space rules up to 10m height, and how do they scale above 10m?",
+    "answer": "Up to 10 m building height: minimum front yard is 3 m (mean 3 m, minimum 1.8 m where full depth can\u2019t be maintained), minimum rear yard is 2 m, and side open spaces must be at least 1.2 m on one side (other than front/rear) and at least 1 m on the other side. Habitable rooms not abutting front/rear/side open spaces must abut an interior open space at least 2.5 m wide (1.5 m wide is sufficient for buildings up to 7 m height). For buildings above 10 m height, the minimum open spaces (and minimum inter-block distances/interior open-space width for the 10 m baseline) must be increased by 0.5 m for every additional 3 m height (or part) above 10 m, provided from ground level for the whole building.",
+    "id": "kpbr_mh_012",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2022-2030",
+        "snippet": "(3) Every building up to 10 metres in height shall have a clear front yard of 3 metres\ndepth:\n\nProvided that where this depth cannot be obtained laterally through out due to the\npeculiar shape of the plot, it shall suffice if the mean depth is not less than 3 metres with\nminimum depth at all points not less than 1.80 metres.\n\n(4) Every building up to 10 metres in height shall have a minimum rear yard of 2\nmetres depth:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2036-2038",
+        "snippet": "(5) Every building up to 10 metres in height shall have open air space of not less than\n1.2 metres width on one of its sides other than the front and rear and not less than 1 metre on\nthe other side:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2058-2063",
+        "snippet": "(6) Any room intended for human habitation and not abutting on either the front, rear\nor side open spaces, shall abut on an interior open space whose width shall not be less than\n2.5 metres for buildings up to 10 metres height.\n\nProvided that in the case of buildings up to 7 metres height it shall be sufficient if\nsuch interior open space has a minimum width of 1.5 metres."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2070-2075",
+        "snippet": "(8) For buildings above 10 metres in height, in addition to the minimum front, rear\nand side open spaces the minimum distance in between various blocks and the minimum\nwidth of interior open space required for height upto 10 metres, there shall be provided\nincrease in such minimum open space at the rate of 0.5 metre for every 3 metres height or\npart thereof exceeding 10 metres. Such additional set back corresponding to increase in\nheight shall be provided for the whole building from ground level itself."
+      }
+    ]
+  },
+  {
+    "question": "What are street-centerline and street-boundary distance rules, and what special relaxation exists for short cul-de-sacs or very narrow streets?",
+    "answer": "Minimum distance from the centre line of a street to any building is 4.50 m. Minimum setback from street boundary is: 2 m for buildings up to 7 m height on roads other than NH/SH/District/notified roads; 3 m on NH/SH/District/notified roads; and for buildings over 7 m height, at least 3 m from the boundary of any street/road. Special relaxation: for cul-de-sacs up to 150 m length, pedestrian lanes, or streets under 3 m width, a 1.50 m distance from the plot boundary abutting the street to the building is sufficient for buildings up to 7 m height, irrespective of the centre-line distance.",
+    "id": "kpbr_mh_013",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2117-2124",
+        "snippet": "_28. Minimum distance between central line of a street and building.-_ (1) The minimum\ndistance between the central line of a street and any building (other than a compound wall or\nfence or outdoor display structure) shall be 4.50 metres and the minimum distance between\nthe street boundary and building shall be 2 metres for buildings upto 7 metres in height, in\nroads other than National Highway, State Highway, District Roads and roads notified by\nPanchayat; and it shall be 3 metres. for National Highway, State Highway, District Roads\nand notified roads; and for buildings more than 7 metres in height the set back shall be\nminimum 3 metres from the boundary of any street/road."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2126-2129",
+        "snippet": "Provided that in the case of cul-de-sac not exceeding 150 metres length or\npedestrian lanes or streets below 3 metres width it shall be sufficient if the distance between\nthe plot boundary abutting the street and building is 1.50 metres for buildings upto 7 metres\nheight irrespective of the distance from the central line of the road to the buildings."
+      }
+    ]
+  },
+  {
+    "question": "How is maximum building height computed from street width and setback, and what cap applies in Security Zones?",
+    "answer": "Maximum building height is limited to: 1.5 \u00d7 (width of street abutting the plot) + 1.5 \u00d7 (width of the yard between building and that street). This height can be further increased by 3 m for every additional 0.50 m (or part) of setback from the building line. In a Security Zone, overall height up to the topmost point must not exceed 10 m (or the lower height specified by the District Collector); if an existing building in the Security Zone is already 10 m or more, further vertical extension is not permitted.",
+    "id": "kpbr_mh_014",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2725-2729",
+        "snippet": "(a) The maximum height of a building or part there of shall not exceed 1.5 times\nthe width of the street abutting the plot plus 1.5 times the width of the yard from the building\nto the abutting street and this height may be further increased at the rate of 3 metres for every\n0.50 metre or part thereof by which the building is set back from the building line.\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2747-2750",
+        "snippet": "(3) In the case of construction or reconstruction of buildings or alteration or\naddition to existing buildings within any Security Zone, the overall height of building upto\nits topmost point shall not exceed 10 metres or as specified by the District Collector as per\nsub rule (8) of rule 5 and/or sub rule (8) of rule 7, whichever is less:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2756-2758",
+        "snippet": "Provided that, if the overall height of any existing building in the Security Zone is\n10 metres or more upto its topmost point, further vertical extension of that building shall\nnot be permitted:"
+      }
+    ]
+  },
+  {
+    "question": "For access-width compliance, what baseline table rule applies, how are mixed occupancies treated, and what override applies to high-rises?",
+    "answer": "Baseline: the minimum clear access width to the building/plot and the access street from the main street must follow Table 3 (varying by storeys, residential single vs multiple unit, non-residential floor-area bands, and whether the occupancy is Group B/C). If the building has multiple occupancies, the entire building is treated as the most restrictive occupancy for determining access width. For high-rise buildings, the high-rise provisions override: access must be 7 m wide (or the wider width prescribed elsewhere in the rules).",
+    "id": "kpbr_mh_015",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2763-2765",
+        "snippet": "37. Access .- (1) The minimum clear width of access to a building and plot as well as the\nwidth of the street giving access to the plot from the main street shall be as shown in\nTable 3. 1"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2783-2789",
+        "snippet": "Single unit Multiple unit Upto 300 sq.m floor area in each floor Above 300 sq.m floor area in any floor Upto 300 sq.m floor area in each floor Above 300 sq.m floor area in any floor\n(i) Single Storeyed NA 1.2 1.2 3.6 3.6 5.0\n(ii) Two Storeyed NA 2.0 3.6 5.0 5.0 5.0\n(iii) Three Storeyed 3.0 3.6 5.0 5.0 5.0 6.0\n(iv) Four Storeyed 3.6 5.0 5.0 6.0 6.0 6.0\n(v) Above four storeyed 8.0 8.0 8.0 8.0 8.0 8.0\n```"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2793-2799",
+        "snippet": "Provided further that, in case of a building having multiple occupancy, the whole\nbuilding shall be treated as being occupied by the most restrictive occupancy for arriving\nat the access width:\n\nProvided also that in the case of high rise buildings, the minimum width of access\nshall be the width as stipulated in Chapter XVI of these rules.\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:5221-5223",
+        "snippet": "_111. Access.-_ The width of access to a high rise building and plot as well as the\nwidth of street giving access to the plot from the main street shall be 7 metres or as\nprescribed elsewhere in these rules, whichever is greater."
+      }
+    ]
+  },
+  {
+    "question": "For Group A1 apartment parking, what rates apply by carpet-area band, how are fractions handled, and what visitor parking add-on is mandatory?",
+    "answer": "Group A1 apartment/flat car-parking (Table 4A) is based on carpet area per dwelling unit: up to 60 sq.m\u20141 space per 4 units; >60 to 100 sq.m\u20141 per 2 units; >100 to 150 sq.m\u20141 per unit; >150 to 250 sq.m\u20141.5 per unit; >250 sq.m\u20142 per unit. Any fraction in the total parking requirement is rounded up to the next whole number. Additionally, 15% of the mandatory off-street parking requirement must be provided as visitors\u2019 parking, earmarked and maintained exclusively for visitors.",
+    "id": "kpbr_mh_016",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2847-2871",
+        "snippet": "Carpet area per dwelling unit Off-street parking spaces at the rate of\nupto 60 sq.metres 1 for every 4 dwelling units\nabove 60 sq. metres\nupto 100 sq.metres\n1 for every 2 dwelling units\nabove 100 sq.metres\nupto 150 sq.metres\n1 for every dwelling unit\nabove 150 sq.metres\nupto 250 sq.metres\n1.5 for every dwelling unit\nabove 250 sq.metres 2 for every dwelling unit\nNote:- Fractions if any in the total number of parkings worked out shall be rounded\noff to the next whole number."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3041-3043",
+        "snippet": "(5) In the case of apartment houses/ flats, 15% of mandatory off-street parking\nspace as in Table 4A shall be provided additionally, earmarked and maintained exclusively\nto accommodate visitors\u2019 parking."
+      }
+    ]
+  },
+  {
+    "question": "For non-A1 occupancies, what Category-II parking relaxation exists, what two-wheeler add-on is mandatory, and when are loading/unloading bays required?",
+    "answer": "For occupancies other than Group A1 apartments/flats, Category-II Village Panchayats may provide only 75% of the parking requirement. Wherever off-street parking is required, an additional 25% of that parking area must be provided for two-wheelers. Loading/unloading bays (each 30 sq.m) are required, in addition to Table 4B parking, for Group F (mercantile/commercial), Group G1 (industrial), Group G2 (small industrial), and Group H (storage) occupancies at the rate of 1 loading bay + 1 unloading bay per 1000 sq.m (or part) of floor area exceeding the first 700 sq.m.",
+    "id": "kpbr_mh_017",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3016-3017",
+        "snippet": "Provided that in the case of Category II Village Panchayats, it shall suffice if 75% of\nthe above parking is provided."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3038-3039",
+        "snippet": "(4) Wherever any off-street parking space is required under these rules, 25% of\nthat area shall be provided additionally for parking two- wheelers."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3045-3049",
+        "snippet": "(6) In addition to the parking space as in Table 4B, in the case of Group F -\nMercantile or Commercial, Group G1 \u2013 Industrial, Group G2 \u2013 Small industrial and Group\nH - Storage occupancies, loading and unloading spaces each 30 sq.metres shall be provided\nwithin the plot, at the rate of one such space for each 1000 sq.metres of floor area or fraction\nthereof, exceeding the first 700 sq.metres of floor area."
+      }
+    ]
+  },
+  {
+    "question": "How should FAR/coverage be computed for mixed-occupancy plots above vs up to 0.5 hectares, and what fixed FAR/coverage applies to government-approved IT parks/buildings?",
+    "answer": "For mixed-occupancy plots >0.5 hectares (with occupancies among A1, A2, D, E, F), the maximum permissible FAR and coverage are computed as the weighted average of the respective FAR/coverage values in Table 2, based on the occupancies\u2019 proportions. If the plot area is up to 0.5 hectares, FAR and coverage must follow the most restrictive occupancy. For Government Owned IT Parks / Government Approved Private IT Parks / Government Approved Private IT Buildings under Group E, FAR is fixed at 3.25 and coverage at 40% irrespective of Panchayat category.",
+    "id": "kpbr_mh_018",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2706-2714",
+        "snippet": "(iii) In the case of a building / building complex which accommodates more\nthan one occupancy from among the groups A1-Residential, A2-Lodging Houses, D-\nAssembly, E-Office or Business and F-Mercantile/ Commercial, the maximum permissible\nFloor Area Ratio and Coverage shall be the weighted average of the Floor Area Ratio and\nCoverage under the respective occupancies in Table 2, if the plot has an area more than 0.5\nhectares.\n\nProvided that, if the plot area is upto 0.5 hectares, the Floor Area Ratio and\nCoverage shall be that of the most restrictive occupancy."
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:2716-2720",
+        "snippet": "(iv) In the case of Government Owned Information Technology Parks,\nGovernment Approved Private Information Technology Parks and Government Approved\nPrivate Information Technology buildings under Group E occupancy, the maximum\npermissible FAR shall be 3.25 and the maximum permissible coverage shall be 40%,\nirrespective of the category of the Grama Panchayat."
+      }
+    ]
+  },
+  {
+    "question": "For A1 apartments and A2 lodging houses, what DTP/CTP approval thresholds trigger, and when is Fire Force approval required?",
+    "answer": "Approvals: For Group A1 apartment houses/flats, District Town Planner approval is required when total dwelling units exceed 50 up to 100; Chief Town Planner approval is required when units exceed 100. For Group A2 lodging houses, District Town Planner approval is required when total floor area exceeds 3000 sq.m up to 6000 sq.m; Chief Town Planner approval is required when total floor area exceeds 6000 sq.m. Fire Force approval: for buildings exceeding three storeys above ground level, a certificate of approval from the Director of Fire Force (or authorised officer) must be obtained before issuing the building permit.",
+    "id": "kpbr_mh_019",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3307-3310",
+        "snippet": "of apartment houses/ flats under Group A1 Residential occupancy, approval of the District\nTown Planner shall be obtained for the usage of plot and lay-out of buildings with total\nnumber of dwelling units exceeding 50 units, but upto 100 units and approval of the Chief\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3315-3317",
+        "snippet": "Town Planner shall be obtained for the usage of plot and lay-out of buildings with total\nnumber of dwelling units exceeding 100 units:\n"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3321-3325",
+        "snippet": "(2) In the case of group A2 Lodging Houses occupancy, approval of the\nDistrict Town Planner shall be obtained for usage of plot and lay-out of buildings with\ntotal floor area exceeding 3000 sq. metres, but upto 6000 sq. metres and approval of the\nChief Town Planner shall be obtained for the usage of plot and lay-out of buildings with\ntotal floor area exceeding 6000 sq. metres:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3336-3338",
+        "snippet": "(4) In the case of buildings exceeding three storeys above ground level, a\ncertificate of approval from the Director of Fire Force or an officer authorised by him shall\nbe obtained before the issue of the building permit."
+      }
+    ]
+  },
+  {
+    "question": "For educational/medical/office occupancies under Rule 56, what different plot-usage approval thresholds apply and what minimum open yards are required?",
+    "answer": "Rule 56 approval thresholds: (a) For professional educational institutions (Group B) and all Group C buildings, District Town Planner approval is required when total floor area exceeds 500 sq.m up to 2000 sq.m (per occupancy), and Chief Town Planner approval is required when it exceeds 2000 sq.m. (b) For other Group B buildings and Group E (office/business), District Town Planner approval is required when total floor area exceeds 3000 sq.m up to 6000 sq.m (per occupancy), and Chief Town Planner approval is required when it exceeds 6000 sq.m. Minimum open yards (for buildings up to 10 m height under Group B/C/E with >300 sq.m built-up area): front yard average 6 m (min 4.5 m), side yards average 2 m each (min 1.5 m each), rear yard average 4.5 m (min 2 m). If height exceeds 10 m, open spaces (from boundaries and between buildings) increase by 0.5 m for every additional 3 m height.",
+    "id": "kpbr_mh_020",
+    "ground_truth_chunks": [
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3346-3351",
+        "snippet": "(a) Professional Educational Institutions under Group B occupancy and all buildings\nunder Group C occupancy, approval of the District Town Planner shall be obtained for usage\nof plot and lay-out of buildings with total floor area exceeding 500 sq.metres, but upto 2000\nsq.metres under each such occupancy and approval of the Chief Town Planner shall be\nobtained for the usage of plot and lay-out of buildings with total floor area exceeding 2000\nsq.metres under each such occupancy:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3356-3361",
+        "snippet": "(b) In the case of Group B occupancy other than Professional Educational\nInstitutions and Group E occupancy, approval of the District Town Planner shall be obtained\nfor usage of plot and lay-out of buildings with total floor area exceeding 3000 sq.metres, but\nupto 6000 sq.metres under each such occupancy and approval of the Chief Town Planner\nshall be obtained for the usage of plot and lay-out of buildings with total floor area\nexceeding 6000 sq.metres:"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3370-3376",
+        "snippet": "(2) All buildings upto 10 metres height under educational or medical/hospital or\noffice/business with more than 300 sq.metres built up area shall have the minimum open\n(yards) spaces as shown below;-\n\n(i) Front yard average 6 metres with minimum 4.5 metres\n(ii) Side yard average 2 metres with minimum 1.5. metres (each side)\n(iii) Rear yard average 4.5 metres with minimum 2 metres"
+      },
+      {
+        "citation": "data/kerala/kpbr_panchayat_rule.md:3383-3385",
+        "snippet": "Provided further that where the height of the building exceeds 10 metres, the open\n(yards) space from the boundary and that in between buildings shall be increased\nproportionately at the rate of 0.5 metres for every 3 metres increase in height."
+      }
+    ]
+  }
+]
