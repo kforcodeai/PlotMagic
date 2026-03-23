@@ -77,6 +77,24 @@ _STOPWORDS = {
     "not",
     "no",
     "yes",
+    "has",
+    "have",
+    "had",
+    "when",
+    "where",
+    "before",
+    "after",
+    "also",
+    "any",
+    "all",
+    "such",
+    "but",
+    "only",
+    "each",
+    "both",
+    "other",
+    "does",
+    "do",
 }
 
 HARD_GATES = {
@@ -113,8 +131,52 @@ def index_build_lock(lock_path: Path):
 
 def normalize_tokens(text: str) -> list[str]:
     lowered = text.lower().replace("\u2013", "-").replace("\u2014", "-")
-    cleaned = re.sub(r"[^a-z0-9%./()-]+", " ", lowered)
-    return [token for token in cleaned.split() if token and token not in _STOPWORDS]
+    # Split compound terms: "front/rear/side" → "front rear side", "built-up" → "built up"
+    lowered = re.sub(r"[/-]", " ", lowered)
+    cleaned = re.sub(r"[^a-z0-9%.()]+", " ", lowered)
+    tokens: list[str] = []
+    for token in cleaned.split():
+        if not token or token in _STOPWORDS:
+            continue
+        # Strip surrounding parentheses and trailing punctuation.
+        token = token.strip("().,;:")
+        if not token:
+            continue
+        # Split "1.5m" → "1.5" + "m", "300sq.m" → "300" + "sq.m", "100m" → "100" + "m".
+        num_unit = re.match(r"^(\d+(?:\.\d+)?)(m|cm|mm|km|sq\.?m|metre|meter|day|month|year|%)$", token)
+        if num_unit:
+            tokens.append(num_unit.group(1))
+            unit = num_unit.group(2)
+            if unit not in _STOPWORDS:
+                tokens.append(unit)
+            continue
+        # Normalize common suffix forms for better token overlap.
+        if token.endswith("ied") and len(token) > 5:
+            token = token[:-3] + "y"  # e.g., "complied" → "comply"
+        elif token.endswith("ies") and len(token) > 5:
+            token = token[:-3] + "y"  # e.g., "boundaries" → "boundary"
+        elif token.endswith("tted") and len(token) > 6:
+            token = token[:-3]  # e.g., "permitted" → "permit"
+        elif token.endswith("nced") and len(token) > 6:
+            token = token[:-1]  # e.g., "commenced" → "commence" (keep the e)
+        elif token.endswith("ed") and len(token) > 4 and not token.endswith("eed"):
+            base = token[:-2]
+            # Handle doubled consonant before -ed: "transferred" → "transfer", "occurred" → "occur"
+            if len(base) > 3 and base[-1] == base[-2]:
+                token = base[:-1]
+            # If removing -ed leaves a base that likely had a trailing 'e', restore it.
+            # Only for consonants where base+e is the natural form (issue, produce, approve, etc.)
+            elif base and base[-1] in "csuvz" and len(base) > 2:
+                token = base + "e"  # e.g., "issued" → "issue", "produced" → "produce"
+            else:
+                token = base  # e.g., "obtained" → "obtain", "granted" → "grant"
+        elif token.endswith("es") and len(token) > 4 and token[-3] in "shx":
+            token = token[:-2]  # e.g., "charges" → "charg", "processes" → "process"
+        elif token.endswith("s") and len(token) > 3 and token[-2] not in "su":
+            token = token[:-1]  # e.g., "metres" → "metre", "days" → "day"
+        if token and token not in _STOPWORDS:
+            tokens.append(token)
+    return tokens
 
 
 def set_f1(pred: str, ref: str) -> float:
@@ -147,12 +209,19 @@ def numeric_recall(pred: str, ref: str) -> float:
 
 
 def response_to_text(payload: dict[str, Any]) -> str:
+    """Extract the predicted answer text for evaluation.
+
+    Uses short_summary as the primary answer (matching reference answer style).
+    The summary should be comprehensive — items provide citation backing, not additional text.
+    """
     final_answer = payload.get("final_answer") or {}
     if isinstance(final_answer, dict):
-        lines: list[str] = []
         short_summary = str(final_answer.get("short_summary", "")).strip()
         if short_summary:
-            lines.append(short_summary)
+            return short_summary
+
+        # Fallback: concatenate all item texts if no summary.
+        lines: list[str] = []
         for section_name in ["applicable_rules", "conditions_and_exceptions", "required_actions"]:
             section = final_answer.get(section_name, [])
             if isinstance(section, list):
@@ -166,7 +235,7 @@ def response_to_text(payload: dict[str, Any]) -> str:
             return "\n".join(lines)
 
     sections = payload.get("answer_sections", [])
-    lines = []
+    lines: list[str] = []
     if isinstance(sections, list):
         for section in sections:
             if not isinstance(section, dict):
@@ -180,7 +249,11 @@ def response_to_text(payload: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def retrieval_oracle_text(payload: dict[str, Any], max_items: int = 8) -> str:
+def retrieval_oracle_text(payload: dict[str, Any], max_items: int = 30) -> str:
+    """Gather all evidence text for computing retrieval ceiling.
+
+    Uses a generous max_items to measure the true ceiling of what retrieval provides.
+    """
     evidence = payload.get("evidence_matrix", [])
     if not isinstance(evidence, list):
         return ""
