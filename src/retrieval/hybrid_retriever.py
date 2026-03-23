@@ -792,11 +792,50 @@ class HybridRetriever:
             fallback = re.sub(r"\s+", " ", doc.full_text).strip()
             return fallback[:1800], 0.0
 
+        # Ensure must-keep sentences (numeric, proviso, condition) are included
+        # even if they didn't score high enough for the initial selection.
+        must_keep_keywords = {"provided that", "provided further", "unless", "subject to", "shall not apply"}
+        selected_texts = {s for _, _, s in selected}
+        for score, order, sentence in scored_sentences:
+            if sentence in selected_texts:
+                continue
+            lowered = sentence.lower()
+            is_must_keep = (
+                any(kw in lowered for kw in must_keep_keywords)
+                or (bool(re.search(r"\b\d+(?:\.\d+)?\s*(?:day|month|year|metre|meter|m\b|sq)", lowered)))
+            )
+            if is_must_keep:
+                selected.append((score, order, sentence))
+                selected_texts.add(sentence)
+
+        # Re-sort by original document order for coherent reading.
+        selected.sort(key=lambda item: item[1])
+
         excerpt = re.sub(r"\s+", " ", " ".join(sentence for _score, _order, sentence in selected)).strip()
         avg_score = sum(score for score, _order, _sentence in selected) / float(len(selected))
         denom = float(max(1, len(query_terms)))
         relevance = min(1.0, avg_score / denom)
-        return excerpt[: self.policy.max_excerpt_chars], relevance
+
+        # Truncate at sentence boundary instead of raw char slice.
+        max_chars = self.policy.max_excerpt_chars
+        if len(excerpt) > max_chars:
+            excerpt = self._truncate_at_sentence_boundary(excerpt, max_chars)
+        return excerpt, relevance
+
+    @staticmethod
+    def _truncate_at_sentence_boundary(text: str, max_chars: int) -> str:
+        """Truncate *text* to roughly *max_chars*, cutting at the last sentence
+        boundary (period followed by space or end-of-string) that fits."""
+        if len(text) <= max_chars:
+            return text
+        # Allow 15% overshoot to avoid cutting a sentence that barely exceeds the limit.
+        hard_limit = int(max_chars * 1.15)
+        truncated = text[:hard_limit]
+        # Find last sentence-ending period.
+        last_period = truncated.rfind(". ")
+        if last_period > max_chars * 0.5:
+            return truncated[: last_period + 1].strip()
+        return truncated.strip()
 
     _STOPWORDS = {
         "the", "and", "for", "are", "was", "were", "been", "being",

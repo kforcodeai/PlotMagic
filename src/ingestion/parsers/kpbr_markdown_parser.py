@@ -74,6 +74,12 @@ _TOPIC_KEYWORDS = {
     "defence_railway": [
         "defence", "railway",
     ],
+    "security_zone": [
+        "security zone", "security zones",
+    ],
+    "religious_building": [
+        "religious", "worship", "communal disturbance", "communal harmony",
+    ],
     "deemed_approval": [
         "deemed to have been given", "deemed approval",
     ],

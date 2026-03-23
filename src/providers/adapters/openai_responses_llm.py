@@ -97,17 +97,22 @@ class OpenAIResponsesLLMProvider(LLMProvider):
         for attempt in range(self.max_retries + 1):
             try:
                 with _request_deadline(self.timeout_s + 2.0):
+                    # Use caller-provided instructions if present in payload,
+                    # otherwise fall back to default system prompt.
+                    _default_system = (
+                        "You are a compliance drafting assistant. "
+                        "Return strict JSON only and do not invent facts beyond payload."
+                    )
+                    if isinstance(payload, dict) and payload.get("instructions"):
+                        system_content = str(payload["instructions"])
+                    else:
+                        system_content = _default_system
                     response = self._client.responses.create(
                         model=self.model,
                         input=[
                             {
                                 "role": "system",
-                                "content": (
-                                    "You are a compliance drafting assistant. "
-                                    "Return strict JSON only and do not invent facts beyond payload. "
-                                    "Be concise: each text field should be 1-3 sentences capturing the key legal requirement, "
-                                    "specific numbers, timelines, and conditions. Omit filler and repetition."
-                                ),
+                                "content": system_content,
                             },
                             {
                                 "role": "user",
