@@ -100,6 +100,59 @@ class AgenticQueryOrchestrator:
         "where",
         "how",
     }
+    _COMPLIANCE_QUERY_HINTS = (
+        "can i",
+        "is it allowed",
+        "allowed",
+        "permitted",
+        "permissible",
+        "legal",
+        "lawful",
+        "required",
+        "need to",
+        "do i need",
+        "mandatory",
+        "violation",
+        "unauthorised",
+        "unauthorized",
+        "without permit",
+        "without approval",
+        "without licence",
+        "without license",
+    )
+    _PROHIBITION_PATTERNS: tuple[re.Pattern[str], ...] = (
+        re.compile(r"\bshall\s+not\b", flags=re.IGNORECASE),
+        re.compile(r"\bnot\s+permitted\b", flags=re.IGNORECASE),
+        re.compile(r"\bprohibit(?:ed|ion)?\b", flags=re.IGNORECASE),
+        re.compile(r"\bunlawful\b", flags=re.IGNORECASE),
+        re.compile(r"\bno\s+work\s+shall\s+be\s+commenced\b", flags=re.IGNORECASE),
+        re.compile(r"\bdemolish(?:ed|ment)?\b", flags=re.IGNORECASE),
+    )
+    _ALLOWANCE_PATTERNS: tuple[re.Pattern[str], ...] = (
+        re.compile(r"\bpermit\s+not\s+necessary\b", flags=re.IGNORECASE),
+        re.compile(r"\bno\s+building\s+permit\s+shall\s+be\s+necessary\b", flags=re.IGNORECASE),
+        re.compile(r"\bexempt(?:ed|ion)?\b", flags=re.IGNORECASE),
+        re.compile(r"\bshall\s+be\s+permitted\b", flags=re.IGNORECASE),
+        re.compile(r"\bis\s+allowed\b", flags=re.IGNORECASE),
+        re.compile(r"\bdeemed\s+to\s+have\s+been\s+issued\b", flags=re.IGNORECASE),
+    )
+    _REQUIREMENT_PATTERNS: tuple[re.Pattern[str], ...] = (
+        re.compile(r"\bshall\s+be\s+required\b", flags=re.IGNORECASE),
+        re.compile(r"\bmust\s+be\s+submitted\b", flags=re.IGNORECASE),
+        re.compile(r"\bmust\s+obtain\b", flags=re.IGNORECASE),
+        re.compile(r"\bshall\s+obtain\b", flags=re.IGNORECASE),
+        re.compile(r"\bis\s+required\b", flags=re.IGNORECASE),
+        re.compile(r"\brequired\s+to\b", flags=re.IGNORECASE),
+        re.compile(r"\bmandatory\b", flags=re.IGNORECASE),
+    )
+    _CONDITIONAL_PATTERNS: tuple[re.Pattern[str], ...] = (
+        re.compile(r"\bprovided\s+that\b", flags=re.IGNORECASE),
+        re.compile(r"\bprovided\s+further\b", flags=re.IGNORECASE),
+        re.compile(r"\bunless\b", flags=re.IGNORECASE),
+        re.compile(r"\bsubject\s+to\b", flags=re.IGNORECASE),
+        re.compile(r"\bin\s+case\b", flags=re.IGNORECASE),
+        re.compile(r"\bif\b", flags=re.IGNORECASE),
+    )
 
     def __init__(
         self,
@@ -190,9 +243,12 @@ class AgenticQueryOrchestrator:
             if score > claim_scores.get(item.claim_id, 0.0):
                 claim_scores[item.claim_id] = score
 
-        verdict = "depends"
-        if not final_judge.sufficient and not final_judge.can_answer_partially:
-            verdict = "insufficient_evidence"
+        verdict = self._derive_verdict(
+            query=query,
+            plan=plan,
+            judge=final_judge,
+            claim_texts=claim_texts,
+        )
 
         missing_components = self._canonicalize_missing_components(
             [*final_judge.missing_topics, *final_judge.missing_mandatory_components]
@@ -252,12 +308,9 @@ class AgenticQueryOrchestrator:
         )
         if verdict != "insufficient_evidence" and memory_hit:
             final_answer.short_summary = memory_hit.answer
-            # For municipality benchmark synthesis, use memory summary only to
-            # avoid adding unrelated section text to the scored output.
-            if (fact.jurisdiction_type or "").strip().lower() == "municipality":
-                final_answer.applicable_rules = []
-                final_answer.conditions_and_exceptions = []
-                final_answer.required_actions = []
+            # Keep all evidence sections intact regardless of jurisdiction.
+            # Clearing sections removes all supporting evidence from the user's
+            # view, which defeats the purpose of a compliance tool.
             self._emit(
                 event_sink,
                 step="agentic.case_memory",
@@ -316,6 +369,122 @@ class AgenticQueryOrchestrator:
             },
         )
         return answer
+
+    def _derive_verdict(
+        self,
+        *,
+        query: str,
+        plan: QueryPlan,
+        judge: EvidenceJudgeResult,
+        claim_texts: dict[str, str],
+    ) -> str:
+        if not judge.sufficient and not judge.can_answer_partially:
+            return "insufficient_evidence"
+        counts = self._compliance_signal_counts(list(claim_texts.values()))
+        signal = self._compliance_signal(counts)
+
+        if self._is_requirement_query(query):
+            # For "is X required?" style questions, a clear mandatory signal
+            # maps to non_compliant (requirement exists and omission violates).
+            if counts["requirement"] > 0 and counts["allow"] == 0 and counts["conditional"] == 0:
+                return "non_compliant"
+            if counts["allow"] > 0 and counts["requirement"] == 0 and counts["prohibit"] == 0:
+                return "compliant"
+
+        if not self._is_binary_compliance_query(query=query, plan=plan):
+            return "depends"
+
+        if signal == "non_compliant":
+            return "non_compliant"
+        if signal == "compliant":
+            return "compliant"
+        return "depends"
+
+    def _is_binary_compliance_query(self, *, query: str, plan: QueryPlan) -> bool:
+        if plan.query_type == "compliance_check":
+            return True
+        lowered = query.strip().lower()
+        if any(token in lowered for token in self._COMPLIANCE_QUERY_HINTS):
+            return True
+        return bool(
+            re.match(r"^\s*(?:can|is|are|may|must|should|would|will|do|does)\b", lowered)
+            and any(
+                token in lowered
+                for token in [
+                    "allow",
+                    "permit",
+                    "permissible",
+                    "legal",
+                    "lawful",
+                    "violation",
+                    "unauthorised",
+                    "unauthorized",
+                    "required",
+                    "need",
+                    "mandatory",
+                ]
+            )
+        )
+
+    def _is_requirement_query(self, query: str) -> bool:
+        lowered = query.strip().lower()
+        if any(
+            token in lowered
+            for token in [
+                "required",
+                "need to",
+                "do i need",
+                "must i",
+                "mandatory",
+            ]
+        ):
+            return True
+        return bool(
+            re.match(r"^\s*(?:is|are|do|does|must|should)\b", lowered)
+            and any(token in lowered for token in ["required", "need", "mandatory"])
+        )
+
+    def _compliance_signal(self, counts: dict[str, int]) -> str:
+        allow_hits = counts["allow"]
+        prohibit_hits = counts["prohibit"]
+        conditional_hits = counts["conditional"]
+        requirement_hits = counts["requirement"]
+
+        if prohibit_hits >= 1 and allow_hits == 0:
+            return "non_compliant"
+        if requirement_hits >= 1 and prohibit_hits == 0 and conditional_hits == 0 and allow_hits == 0:
+            return "non_compliant"
+        if allow_hits >= 1 and prohibit_hits == 0 and conditional_hits == 0:
+            return "compliant"
+        return "uncertain"
+
+    def _compliance_signal_counts(self, texts: list[str]) -> dict[str, int]:
+        if not texts:
+            return {"allow": 0, "prohibit": 0, "conditional": 0, "requirement": 0}
+
+        allow_hits = 0
+        prohibit_hits = 0
+        conditional_hits = 0
+        requirement_hits = 0
+        for text in texts:
+            lowered = str(text or "").lower()
+            if not lowered.strip():
+                continue
+            allow_hits += sum(1 for pattern in self._ALLOWANCE_PATTERNS if pattern.search(lowered))
+            prohibit_hits += sum(1 for pattern in self._PROHIBITION_PATTERNS if pattern.search(lowered))
+            conditional_hits += sum(1 for pattern in self._CONDITIONAL_PATTERNS if pattern.search(lowered))
+            requirement_hits += sum(1 for pattern in self._REQUIREMENT_PATTERNS if pattern.search(lowered))
+        return {
+            "allow": allow_hits,
+            "prohibit": prohibit_hits,
+            "conditional": conditional_hits,
+            "requirement": requirement_hits,
+        }
+
+    @staticmethod
+    def _case_memory_enabled() -> bool:
+        value = os.getenv("PLOTMAGIC_CASE_MEMORY_ENABLED", "").strip().lower()
+        return value in {"1", "true", "yes", "on"}
 
     def _canonicalize_missing_components(self, values: list[str]) -> list[str]:
         aliases = {
@@ -1086,6 +1255,8 @@ class AgenticQueryOrchestrator:
         query: str,
         jurisdiction_type: str | None,
     ) -> CaseMemoryEntry | None:
+        if not self._case_memory_enabled():
+            return None
         self._ensure_case_memory_loaded()
         if not self._case_memory_entries:
             return None

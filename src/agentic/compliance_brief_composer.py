@@ -139,10 +139,11 @@ class ComplianceBriefComposer:
                 "Be CONCISE. Include ALL key numbers, authority names, and conditions "
                 "but avoid filler words, redundant phrases, or unnecessary context.\n"
                 "2. STYLE: Write direct factual statements. "
-                "DO NOT include rule/act references (no 'KPBR 2011', 'Rule 36', 'r.36'). "
-                "DO NOT use meta-language ('the evidence states', 'based on the evidence', 'as per'). "
+                "INCLUDE rule references where applicable (e.g. 'Under Rule 36, ...', 'As per KPBR 2011 Rule 8, ...'). "
+                "Users need to know WHICH specific rule applies for legal traceability. "
+                "DO NOT use meta-language ('the evidence states', 'based on the evidence'). "
                 "DO NOT hedge ('may depend', 'varies', 'it appears'). "
-                "State rules as facts: 'The Secretary must consult...' not 'Rule 8 states that...'.\n"
+                "State rules directly: 'Under Rule 8, the Secretary must consult...'.\n"
                 "3. Section items: 1 concise sentence each with citation backing.\n"
                 "4. Use provided claim_id and citation_ids exactly; do not fabricate.\n"
                 "5. Do not invent facts beyond the evidence."
@@ -336,8 +337,9 @@ class ComplianceBriefComposer:
             actions=selected_actions,
             unresolved=unresolved,
         )
+        verdict_value = verdict if verdict in {"compliant", "non_compliant", "depends"} else "depends"
         payload = ComplianceBriefPayload(
-            verdict="depends",
+            verdict=verdict_value,
             short_summary=summary,
             applicable_rules=selected_statements,
             conditions_and_exceptions=selected_conditions,

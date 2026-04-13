@@ -86,7 +86,13 @@ class _FakeHybridRetriever:
         return self.responses[idx]
 
 
-def _response(doc: RuleDocument, topic: str, claim_id: str, supported: bool = True) -> HybridRetrievalResult:
+def _response(
+    doc: RuleDocument,
+    topic: str,
+    claim_id: str,
+    supported: bool = True,
+    text: str | None = None,
+) -> HybridRetrievalResult:
     matrix = EvidenceMatrix(
         items=[
             RetrievalEvidence(
@@ -94,7 +100,7 @@ def _response(doc: RuleDocument, topic: str, claim_id: str, supported: bool = Tr
                 topic=topic,
                 chunk_id=doc.document_id,
                 document_id=doc.document_id,
-                text=f"{topic} requirement from {doc.rule_number}",
+                text=text or f"{topic} requirement from {doc.rule_number}",
                 scores={"rrf_score": 0.7},
                 source="hybrid",
                 has_sufficient_support=supported,
@@ -206,3 +212,68 @@ def test_orchestrator_agentic_dynamic_uses_multi_hop_and_dynamic_k() -> None:
     steps = {item.step for item in out.agent_trace}
     assert "agentic_control_pass_1" in steps
     assert "agentic_control_pass_2" in steps
+
+
+def test_orchestrator_sets_non_compliant_for_clear_prohibition_query() -> None:
+    doc = _doc("KPBR_2011-ch15-r120", "120", "permit")
+    prohibition_text = (
+        "No work shall be commenced without obtaining permit, and such construction is prohibited."
+    )
+    retriever = _FakeHybridRetriever(
+        [_response(doc, "permit", f"permit-{doc.document_id}", text=prohibition_text)]
+    )
+
+    out = _orchestrator().run(
+        query="Can I build without permit?",
+        fact=QueryFact(state="kerala", jurisdiction_type="panchayat", topics=["permit"]),
+        plan=QueryPlan(query_type="compliance_check", topics=["permit"]),
+        docs_in_scope=[doc],
+        hybrid_retriever=retriever,
+        top_k=10,
+    )
+
+    assert out.verdict == "non_compliant"
+    assert out.final_answer is not None
+    assert out.final_answer.verdict == "non_compliant"
+
+
+def test_orchestrator_sets_compliant_for_clear_exemption_query() -> None:
+    doc = _doc("KPBR_2011-ch2-r10", "10", "exemption")
+    exemption_text = "Permit not necessary for these works and such activity is exempted from permit."
+    retriever = _FakeHybridRetriever(
+        [_response(doc, "exemption", f"exemption-{doc.document_id}", text=exemption_text)]
+    )
+
+    out = _orchestrator().run(
+        query="Is this allowed without permit?",
+        fact=QueryFact(state="kerala", jurisdiction_type="panchayat", topics=["exemption"]),
+        plan=QueryPlan(query_type="compliance_check", topics=["exemption"]),
+        docs_in_scope=[doc],
+        hybrid_retriever=retriever,
+        top_k=10,
+    )
+
+    assert out.verdict == "compliant"
+    assert out.final_answer is not None
+    assert out.final_answer.verdict == "compliant"
+
+
+def test_orchestrator_sets_non_compliant_for_requirement_query() -> None:
+    doc = _doc("KPBR_2011-ch2-r25", "25", "completion_certificate")
+    requirement_text = "A completion certificate is required and the owner must obtain occupancy certificate."
+    retriever = _FakeHybridRetriever(
+        [_response(doc, "completion_certificate", f"completion-{doc.document_id}", text=requirement_text)]
+    )
+
+    out = _orchestrator().run(
+        query="Is completion certificate required?",
+        fact=QueryFact(state="kerala", jurisdiction_type="panchayat", topics=["completion_certificate"]),
+        plan=QueryPlan(query_type="procedural", topics=["completion_certificate"]),
+        docs_in_scope=[doc],
+        hybrid_retriever=retriever,
+        top_k=10,
+    )
+
+    assert out.verdict == "non_compliant"
+    assert out.final_answer is not None
+    assert out.final_answer.verdict == "non_compliant"

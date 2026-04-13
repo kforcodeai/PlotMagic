@@ -1,0 +1,678 @@
+{
+  "provider_requested": "openai_responses_llm",
+  "provider_actual": "openai_responses_llm",
+  "provider_model": "gpt-5.2-2025-12-11",
+  "router_model": "gpt-5.2",
+  "scenarios": [
+    {
+      "scenario": "retrieval_after_retrieval",
+      "turns": [
+        {
+          "turn_index": 1,
+          "query": "Is a completion certificate required for buildings under 100 sq metres?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "no prior assistant answer available",
+          "router_confidence": 0.0,
+          "transform_kind": null,
+          "retrieval_query": "Is a completion certificate required for buildings under 100 sq metres?",
+          "top_k_selected": 13,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": false,
+            "always_include": true,
+            "available_turns": 0,
+            "turns_used": 0,
+            "followup_detected": false
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "KPBR 2011 does not state a 100 sq m exemption in the provided rules; completion certificate duties attach to works done under an approved plan/permit. Under KPBR 2011 Rule 25, the Secretary issues a development certificate within 15 days of receiving the completion certificate (with up to 5%/20 cm yard tolerance). For telecom towers, Rule 131 mandates completion certificates (Appendix E/F) and enables a use certificate (Appendix H)."
+        },
+        {
+          "turn_index": 2,
+          "query": "What are the penalties for unauthorized construction in a panchayat?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Kerala Panchayat Building Rules (KPBR) and Kerala Panchayat Raj Act: penalties and enforcement for unauthorized construction (building without permit or in deviation) in a Grama Panchayat. Include provisions on stop memo, demolition/regularisation, compounding, fines/penalties, prosecution, and any relevant rules/sections; note amounts and procedures; current as of latest amendments.",
+          "top_k_selected": 15,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 1,
+            "turns_used": 1,
+            "followup_detected": false,
+            "query_chars": 1088,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "agentic.retry"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 7 and Rule 12, persons (other than Govt departments) must apply to the Grama Panchayat Secretary for building/development permit with prescribed plans/certificates; Rule 133 creates limited “permit not necessary” cases with prior intimation (Appendix A2) and specific siting/opening limits. Under Rule 19, deviations during execution require revised plans and a revised permit, and permitted deviations must be reflected in the completion plan with the completion certificate. Under Rule 20 and Rule 134, construction without permit or in deviation is not ordered altered/demolished if it does not violate the Act/Rules and is regularised by the Secretary."
+        }
+      ],
+      "expected_retrieval_pattern": [
+        true,
+        true
+      ],
+      "actual_retrieval_pattern": [
+        true,
+        true
+      ],
+      "matched_expected_pattern": true,
+      "mismatches": []
+    },
+    {
+      "scenario": "retrieval_non_non_retrieval",
+      "turns": [
+        {
+          "turn_index": 1,
+          "query": "Is a completion certificate required for buildings under 100 sq metres?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "no prior assistant answer available",
+          "router_confidence": 0.0,
+          "transform_kind": null,
+          "retrieval_query": "Is a completion certificate required for buildings under 100 sq metres?",
+          "top_k_selected": 13,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": false,
+            "always_include": true,
+            "available_turns": 0,
+            "turns_used": 0,
+            "followup_detected": false
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "KPBR 2011 does not state in the provided rules whether buildings under 100 sq m are exempt from completion certificates. Under KPBR 2011 Rule 25, the Secretary issues a development certificate within 15 days only after receiving a completion certificate and being satisfied of conformity. Appendix E/F prescribe owner and engineer/architect completion certificates for building works under a permit. For telecom towers, Rule 131 expressly mandates completion certificates and enables a use certificate (Appendix H)."
+        },
+        {
+          "turn_index": 2,
+          "query": "eli5",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "eli5",
+          "router_reason": "User asked only to ELI5 the existing answer; no new legal lookup needed.",
+          "router_confidence": 0.86,
+          "transform_kind": "eli5",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 1,
+            "turns_used": 1,
+            "followup_detected": false,
+            "query_chars": 785
+          },
+          "event_steps": [],
+          "answer_summary": "From what we have there’s no clear rule saying “under 100 sq m = no finish-work certificate.” Instead, the rules we saw assume you submit a."
+        },
+        {
+          "turn_index": 3,
+          "query": "make it as checklist",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "checklist",
+          "router_reason": "User only requested a format transformation (checklist) of the existing answer; no new legal lookup needed.",
+          "router_confidence": 0.9,
+          "transform_kind": "checklist",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 2,
+            "turns_used": 2,
+            "followup_detected": false,
+            "query_chars": 978
+          },
+          "event_steps": [],
+          "answer_summary": "1. Checklist: - Confirm there is no clear exemption shown for buildings under 100 sq m. 2. Submit owner’s completion certificate. 3. Submit supervising architect/engineer completion certificate. 4. For development/redevelopment: file completion certificate to trigger development certificate (the rule."
+        },
+        {
+          "turn_index": 4,
+          "query": "What are the setback rules for Category-II panchayat buildings?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Kerala Panchayat Building Rules (KPBR) 2011: setback (minimum yard/open space) requirements for Category-II panchayat buildings—front, side, rear setbacks; how Category-II is defined; any plot width/road width/height-based variations; relevant rule numbers and tables.",
+          "top_k_selected": 15,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 3,
+            "turns_used": 3,
+            "followup_detected": false,
+            "query_chars": 1581,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "agentic.retry"
+          ],
+          "answer_summary": "KPBR 2011 setback/open-space requirements for “Category‑II Panchayat buildings” cannot be fully stated because the provided extracts do not define Category‑II or include the relevant category tables. Under Rule 64, front yard is minimum 1.80 m (mean ≥1.80 m; minimum point ≥1.20 m) and distance from plot boundary abutting a street (other than NH/SH/district/notified roads) to building is 2.0 m; if side open space is only 0.60 m, only ventilators above 2.0 m are allowed. Under Rule 27, for buildings up to 10 m height, side open spaces are ≥1.2 m on one side and ≥1.0 m on the other; above 10 m, increase minimum open space by 0.5 m per 3 m (or part) over 10 m. Rule 28 allows 1.50 m front distance for buildings up to 7 m height on cul‑de‑sacs ≤150 m or streets below 3 m width; Rule 25 allows tolerance up to 5% of mandatory yards or 20 cm (whichever is less) at completion certification stage."
+        }
+      ],
+      "expected_retrieval_pattern": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "actual_retrieval_pattern": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "matched_expected_pattern": true,
+      "mismatches": []
+    },
+    {
+      "scenario": "non_then_retrieval",
+      "turns": [
+        {
+          "turn_index": 1,
+          "query": "What permits are needed to construct a residential building in a panchayat area?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "no prior assistant answer available",
+          "router_confidence": 0.0,
+          "transform_kind": null,
+          "retrieval_query": "What permits are needed to construct a residential building in a panchayat area?",
+          "top_k_selected": 12,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": false,
+            "always_include": true,
+            "available_turns": 0,
+            "turns_used": 0,
+            "followup_detected": false
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 7, a person (non‑Govt) constructing/reconstructing/altering a building in a Village Panchayat must apply to the Secretary in Appendix A with plans/statements in triplicate, ownership proof, fee, and the registered professional’s certificate; within 100 m of Defence property this Rule 7 process applies. Under KPBR 2011 Rule 5, land development/redevelopment needs an Appendix AA application to the Secretary with triplicate plans and fee. Permit fee amounts depend on Panchayat Category and occupancy per KPBR 2011 Appendix N. Exemptions depend on Category‑II limits (A1 ≤300 sq.m, ≤2 storeys; A2/F etc ≤150 sq.m, ≤2 storeys) and huts (with road adjacency exception) under KPBR 2011 Rule 10."
+        },
+        {
+          "turn_index": 2,
+          "query": "summarize this in bullet points",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "bullets",
+          "router_reason": "User only requested a bullet-point summary of the existing answer; no new legal lookup needed.",
+          "router_confidence": 0.93,
+          "transform_kind": "bullets",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 1,
+            "turns_used": 1,
+            "followup_detected": false,
+            "query_chars": 1019
+          },
+          "event_steps": [],
+          "answer_summary": "- Building permit: Apply to Panchayat Secretary ( Rule. - Using required form. - Submit plans/statements in triplicate, ownership proof, prescribed fee, and registered professional’s certificate. - Land development/redevelopment : Apply using required form ( Rule."
+        },
+        {
+          "turn_index": 3,
+          "query": "What are the penalties for unauthorized construction in a panchayat?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Kerala Panchayat Building Rules 2011 and Kerala Panchayat Raj Act: penalties and enforcement for unauthorized construction in a Village Panchayat area (e.g., construction without permit or in violation of permit). Include relevant sections/rules on stop memo, demolition/alteration orders, compounding/regularisation if any, fines/prosecution, and appeal process; specify amounts/maximum penalties where stated.",
+          "top_k_selected": 17,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 2,
+            "turns_used": 2,
+            "followup_detected": false,
+            "query_chars": 1727,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "agentic.retry"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 7 and Rule 5, construction/alteration or land development in a Village Panchayat requires prior application to the Secretary in Appendix A/AA with triplicate plans, ownership proof, and Schedule I fee. Under KPBR 2011 Rule 20, if violations of the Act/rules/directions occur, the competent authority can direct the Secretary to revoke the permit, stop work, require modification, or order demolition/filling within a specified period. Under KPBR 2011 Rule 137, regularisation is available on remitting compounding fee equal to double the permit fee (only deviated/added area counted) and compliance with conditions; Rule 138 authorises Secretary-led demolition and recovery as arrears of property tax on non-compliance."
+        }
+      ],
+      "expected_retrieval_pattern": [
+        true,
+        false,
+        true
+      ],
+      "actual_retrieval_pattern": [
+        true,
+        false,
+        true
+      ],
+      "matched_expected_pattern": true,
+      "mismatches": []
+    },
+    {
+      "scenario": "non_non_then_retrieval",
+      "turns": [
+        {
+          "turn_index": 1,
+          "query": "What are the penalties for unauthorized construction in a panchayat?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "no prior assistant answer available",
+          "router_confidence": 0.0,
+          "transform_kind": null,
+          "retrieval_query": "What are the penalties for unauthorized construction in a panchayat?",
+          "top_k_selected": 12,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": false,
+            "always_include": true,
+            "available_turns": 0,
+            "turns_used": 0,
+            "followup_detected": false
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 20, the Secretary can issue a provisional demolition/alteration order for work started without permission or against Panchayat decision, serve it with a 7‑day show-cause notice, then confirm and recover demolition expenses. Under KPBR 2011 Rule 150, commencing without permission is punishable, but no punishment applies if the Secretary regularises the unlawful work. Under KPBR 2011 Rule 137 and Appendix‑I, regularisation follows payment of compounding fee and an order absolving liabilities."
+        },
+        {
+          "turn_index": 2,
+          "query": "show me all that you have retrieved",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "show_retrieved",
+          "router_reason": "User requests to display retrieved material; this is a transformation-only request and requires no new legal lookup. There is no retrieved corpus to display.",
+          "router_confidence": 0.9,
+          "transform_kind": "show_retrieved",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 1,
+            "turns_used": 1,
+            "followup_detected": false,
+            "query_chars": 814
+          },
+          "event_steps": [],
+          "answer_summary": "Showing previously retrieved evidence from earlier turns."
+        },
+        {
+          "turn_index": 3,
+          "query": "summarize in one short paragraph",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "summary",
+          "router_reason": "User only requested a one-paragraph summary of the existing content; no new legal lookup needed.",
+          "router_confidence": 0.86,
+          "transform_kind": "summary",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 2,
+            "turns_used": 2,
+            "followup_detected": false,
+            "query_chars": 936
+          },
+          "event_steps": [],
+          "answer_summary": "Unauthorized construction in a Village Panchayat can trigger the rule action: the Secretary may issue a provisional demolition/alteration order with a 7‑day show‑cause notice, then confirm it and. Starting work without permission is also punishable under the rule, but punishment does not apply if the Secretary regularises the work."
+        },
+        {
+          "turn_index": 4,
+          "query": "Now compare this with municipality requirements",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Compare penalties/enforcement and regularisation process for unauthorized construction under Kerala Municipality Building Rules (KMBR) versus Kerala Panchayat Building Rules (KPBR) 2011: demolition/alteration orders, show-cause timelines, compounding/regularisation, and punishment provisions; include relevant rule numbers and any key procedural differences.",
+          "top_k_selected": 17,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 3,
+            "turns_used": 3,
+            "followup_detected": true,
+            "query_chars": 1661,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "agentic.retry"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 20, the Secretary can issue a provisional demolition/alteration order for work commenced without permission/against Panchayat decision, serve it with a 7‑day show‑cause notice, and direct stoppage until compliance. Under KPBR 2011 Rules 134 and 137, the Secretary can regularise only if the work does not violate the Act/Rules, by demanding compounding fee and issuing an Appendix‑I order absolving liabilities; under Rule 138, non‑payment/non‑compliance triggers Secretary-led demolition and recovery as arrears of property tax, with prosecution also contemplated. Under KPBR 2011 Rule 150, commencing without permission and unsafe violations can lead to conviction and imprisonment up to 1 year. For KMBR (1999) the provided evidence only covers permit application/processing (Rules 5 and 11) and does not provide demolition/show‑cause, compounding/regularisation, or punishment provisions, so a full comparison cannot be completed."
+        }
+      ],
+      "expected_retrieval_pattern": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "actual_retrieval_pattern": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "matched_expected_pattern": true,
+      "mismatches": []
+    },
+    {
+      "scenario": "retrieval_non_retrieval_non_retrieval_retrieval",
+      "turns": [
+        {
+          "turn_index": 1,
+          "query": "What are the setback rules for Category-II panchayat buildings?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "no prior assistant answer available",
+          "router_confidence": 0.0,
+          "transform_kind": null,
+          "retrieval_query": "What are the setback rules for Category-II panchayat buildings?",
+          "top_k_selected": 12,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": false,
+            "always_include": true,
+            "available_turns": 0,
+            "turns_used": 0,
+            "followup_detected": false
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "Under KPBR 2011 Rule 64, setback from plot boundary abutting streets (excluding NH/SH/district/notified roads) is 2.0 m and front yard is 1.80 m (mean ≥1.80 m; min 1.20 m). Under KPBR 2011 Rule 74, the same street setback is 1.50 m and front yard 1.50 m, with avg 0.60 m side/rear for individual plots (no layout approval) and no door if yard <1.0 m. Rule 27 adds internal block spacing 3.0 m (≤10 m height) and interior open space 2.5 m (or 1.5 m if ≤7 m). Category-II scope is defined in Rule 132;"
+        },
+        {
+          "turn_index": 2,
+          "query": "Can you explain that in simple terms?",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "eli5",
+          "router_reason": "User only asked to simplify the existing answer; no new jurisdiction/topic requiring fresh legal lookup.",
+          "router_confidence": 0.86,
+          "transform_kind": "eli5",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 1,
+            "turns_used": 1,
+            "followup_detected": false,
+            "query_chars": 794
+          },
+          "event_steps": [],
+          "answer_summary": "Think of “setbacks” as the empty space you must leave between your building and the plot edges/road Two can apply, depending on what kind of Category‑II."
+        },
+        {
+          "turn_index": 3,
+          "query": "What is the permit fee concession for Category I residential buildings up to 150 sq.m?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Kerala Panchayat Building Rules (KPBR) 2011: permit fee concession (reduction/exemption) applicable to Category I residential buildings up to 150 sq.m built-up area—exact concession amount/percentage and relevant rule/notification.",
+          "top_k_selected": 15,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 2,
+            "turns_used": 2,
+            "followup_detected": false,
+            "query_chars": 1211,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "tool.llm_provider"
+          ],
+          "answer_summary": "Under KPBR 2011 Appendix N (Schedule of fees), residential buildings up to 150 sq.m total built-up area in Category I Village Panchayats receive a permit-fee concession: the permit fee is fixed at 50% of the scheduled amount. Under KPBR 2011 Rule 11, the Secretary issues the permit only after remittance of the permit fee at the rates specified in Schedule II (which includes Appendix N). The concession applies only if the building is residential and within the 150 sq.m cap, and only in Category I Village Panchayats notified by Government. The exact rupee amount depends on the applicable scheduled fee line-item for the occupancy/parameters in Appendix N."
+        },
+        {
+          "turn_index": 4,
+          "query": "make this as checklist",
+          "expected_retrieval": false,
+          "retrieval_executed": false,
+          "router_action": "respond_from_context",
+          "router_style": "checklist",
+          "router_reason": "User only asked to convert the existing answer into a checklist; no new legal lookup needed.",
+          "router_confidence": 0.86,
+          "transform_kind": "checklist",
+          "retrieval_query": "[none]",
+          "top_k_selected": null,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 3,
+            "turns_used": 3,
+            "followup_detected": false,
+            "query_chars": 1781
+          },
+          "event_steps": [],
+          "answer_summary": "1. Checklist. 2. Confirm the Panchayat is Government-notified as Category I. 3. Confirm the building is residential. 4. Confirm total built-up area is ≤150 sq.m."
+        },
+        {
+          "turn_index": 5,
+          "query": "What permits are needed for commercial construction in a municipality?",
+          "expected_retrieval": true,
+          "retrieval_executed": true,
+          "router_action": "use_retrieval",
+          "router_style": "normal",
+          "router_reason": "retrieval_tool_called",
+          "router_confidence": 0.95,
+          "transform_kind": null,
+          "retrieval_query": "Kerala Municipality Building Rules (KMBR) / Kerala Municipalities Act: permits/approvals required for commercial construction within a municipality in Kerala (India). Identify required permits (building permit, development permit, occupancy/completion certificate, trade/establishment licence, fire NOC, pollution control consent, electrical safety, lift licence, signage permit, etc.), application process and key rule references.",
+          "top_k_selected": 13,
+          "conversation_meta": {
+            "enabled": true,
+            "applied": true,
+            "always_include": true,
+            "available_turns": 4,
+            "turns_used": 4,
+            "followup_detected": false,
+            "query_chars": 2406,
+            "router_rewrite_applied": true
+          },
+          "event_steps": [
+            "tool.query_start",
+            "tool.scope_resolver",
+            "tool.scope_resolver",
+            "tool.query_planner",
+            "tool.occupancy_resolver",
+            "tool.occupancy_resolver",
+            "tool.fact_extractor",
+            "tool.scope_filter",
+            "agentic.start",
+            "tool.retrieve.pass1",
+            "tool.evidence_judge.pass1",
+            "agentic.retry"
+          ],
+          "answer_summary": "Within a Kerala municipality, permits/approvals for commercial construction depend on whether the activity is “development/redevelopment of land” or “construction/reconstruction/alteration/addition/extension” and on any special clearances triggered by height/airport limits. Under KMBR 1999 Rule 5, land development/redevelopment requires an application to the Secretary in Appendix AA with plans/statements, ownership proof, Schedule 1 fee, and registered professional certificate, submitted before 30 days of commencement. Under KMBR 1999 Rule 11, site/plan approval is intimated in writing and the building permit (Appendix C) is issued only after remittance of permit fee (Schedule II) and submission of revised plans if conditions/modifications apply; required additional information must be sought within 10 days. Under KMBR 1999 Rule 132, where height exceeds Table 3 limits, airport authority clearance must be produced before permit issuance;"
+        }
+      ],
+      "expected_retrieval_pattern": [
+        true,
+        false,
+        true,
+        false,
+        true
+      ],
+      "actual_retrieval_pattern": [
+        true,
+        false,
+        true,
+        false,
+        true
+      ],
+      "matched_expected_pattern": true,
+      "mismatches": []
+    }
+  ],
+  "all_patterns_matched": true,
+  "total_scenarios": 5,
+  "matched_scenarios": 5
+}

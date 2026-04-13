@@ -51,7 +51,7 @@ providers:
       max_retries: 0
       retry_backoff_s: 0.1
     openai_responses_llm:
-      model: gpt-4.1-mini
+      model: gpt-5.2
       api_key_env: OPENAI_API_KEY
       timeout_s: 30
       max_retries: 2
